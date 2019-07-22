@@ -14,9 +14,13 @@ plot(data[,'mean'],pch=16,type="o",xlab="",ylab="O3 concentrations")
 #=== calculate the seasonal mean ===
 yr1=1990
 yr2=2000
+#Construct a vector to store the monthly O3 later
 season_mean=array(NA,yr2-yr1+1)
-for(year in yr1:yr2){
+for(year in yr1:yr2){#loop over each year
+	#select the rows of the summer (June, July and August) for a certain year
 	ind=(data[,"year"]==year & data[,"month"]>=6 & data[,"month"]<=8)
+	#calculate the mean and ignore the missing data
+	#assign the mean value to the vector "season_mean"
 	season_mean[year-yr1+1]=mean(data[ind,"mean"],na.rm=TRUE)
 }
 dev.new(width=5,height=2.8)
