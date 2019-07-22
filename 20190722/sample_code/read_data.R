@@ -19,7 +19,7 @@ season_mean=array(NA,yr2-yr1+1)
 for(year in yr1:yr2){#loop over each year
 	#select the rows of the summer (June, July and August) for a certain year
 	ind=(data[,"year"]==year & data[,"month"]>=6 & data[,"month"]<=8)
-	#calculate the mean and ignore the missing data
+	#calculate the mean and ignore any missing data
 	#assign the mean value to the vector "season_mean"
 	season_mean[year-yr1+1]=mean(data[ind,"mean"],na.rm=TRUE)
 }
