@@ -1,19 +1,18 @@
 #change your working directory
 setwd("~/Summer_tutor/For_Guangyi/20190722/sample_code")
-#read the data
 data=read.csv("small_data.csv",header=TRUE)
 y=data[,"mean"]
 y[y<=-999]=NA
 data[,"mean"]=y
 
 #=== I define a function here====
-cal_season_mean=function(data,yr1=1990,yr2=2000){
+cal_season_mean=function(data,yr1=1990,yr2=2000){#These are input parameters
    season_mean=array(NA,yr2-yr1+1)
    for(year in yr1:yr2){#loop over each year
 	  ind=(data[,"year"]==year & data[,"month"]>=6 & data[,"month"]<=8)
 	  season_mean[year-yr1+1]=mean(data[ind,"mean"],na.rm=TRUE)
    }
-   return(season_mean)
+   return(season_mean)#We need to return a value
 }
 
 yr1=1990;yr2=1997
@@ -23,7 +22,7 @@ x=yr1:yr2
 y= cal_season_mean(data,yr1,yr2)#Call the function
 plot(yr1:yr2,y,pch=16,type="o",xlab="",ylab="O3 concentrations")
 
-#=== I define a function here====
+#=== I define a function here but I use tapply====
 cal_season_mean2=function(data,yr1=1990,yr2=2000){
    ind=(data[,"year"]>=yr1 & data[,"year"]<=yr2 & data[,"month"]>=6 & data[,"month"]<=8)
    #Here I use tapply to make my code succinct
