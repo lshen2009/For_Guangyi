@@ -1,0 +1,66 @@
+setwd("~/Summer_tutor/For_Guangyi/20190722/sample_code")
+data=read.csv("small_data.csv")
+data=read.csv("small_data.csv",header=TRUE)
+data
+setwd("~/Summer_tutor/For_Guangyi/20190722/sample_code")#
+data=read.csv("small_data.csv",header=TRUE)
+data
+plot(data[,'mean'])
+plot(data[,'mean'],pch=16,type="l")
+plot(data[,'mean'],pch=16,type="o")
+#====plot a simple figure ====#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(data[,'mean'],pch=16,type="o")
+#change your working directory#
+setwd("~/Summer_tutor/For_Guangyi/20190722/sample_code")#
+#read the data#
+data=read.csv("small_data.csv",header=TRUE)#
+#
+#====plot a simple figure ====#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(data[,'mean'],pch=16,type="o",xlab="",ylab="O3 concentrations")
+#change your working directory#
+setwd("~/Summer_tutor/For_Guangyi/20190722/sample_code")#
+#read the data#
+data=read.csv("small_data.csv",header=TRUE)#
+#
+#====plot a simple figure ====#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(data[,'mean'],pch=16,type="o",xlab="",ylab="O3 concentrations")
+data
+y=data[,"mean"]
+y=data[,"mean"]#
+y[y<=-999]=NA#
+data[,"mean"]=y
+#====plot a simple figure ====#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(data[,'mean'],pch=16,type="o",xlab="",ylab="O3 concentrations")
+yr1=1990#
+yr2=2000#
+season_mean=array(NA,yr2-yr1+1)
+year=2000
+ind=(data[,"year"]==year & date[,"month"]>=6 & date[,"month"]<=8)
+ind=(data[,"year"]==year & data[,"month"]>=6 & data[,"month"]<=8)
+data[ind,]
+data[ind,"mean"]
+yr1=1990#
+yr2=2000#
+season_mean=array(NA,yr2-yr1+1)#
+for(year in yr1:yr2){#
+	ind=(data[,"year"]==year & data[,"month"]>=6 & data[,"month"]<=8)#
+	season_mean[year-yr1+1]=mean(data[ind,"mean"],na.rm=TRUE)#
+}
+season_mean
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(yr1:yr2,season_mean,pch=16,type="o",xlab="",ylab="O3 concentrations")
+?array
+array(0,c(3,4))
+array(0,3)
+array(1:3, c(2,4)) # recycle 1:3 "2 2/3 times"
+7.9+1.2+12.9+8.3+27.3+1
+12.9+8.3+27.3

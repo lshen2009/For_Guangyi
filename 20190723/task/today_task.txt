@@ -1,0 +1,6 @@
+1. Learn how to write functions.
+If you need to plot the timeseries of multiple sites (e.g. ID=4, 5, 7 and 10), what you should do?
+2. Learn how to use tapply function.
+3. Learn how to plot multiple panels in one plot.
+Try to plot the timeseries of Site 4, 5, 7 and 10 in one plot.
+
