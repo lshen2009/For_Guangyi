@@ -15,9 +15,10 @@ cal_season_mean=function(data,yr1=1990,yr2=2000){#These are input parameters
    return(season_mean)#We need to return a value
 }
 
-yr1=1990;yr2=1997
+
 dev.new(width=5,height=2.8)
 par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)
+yr1=1991;yr2=1995
 x=yr1:yr2
 y= cal_season_mean(data,yr1,yr2)#Call the function
 plot(yr1:yr2,y,pch=16,type="o",xlab="",ylab="O3 concentrations")
@@ -36,9 +37,11 @@ y2= cal_season_mean2(data,yr1,yr2)#Call the function
 #==== how to plot multiple figures in one plot? ===
 dev.new(width=5,height=2.8)
 par(mar=c(3,2,1,3))
-par(mfrow=c(2,2))
+par(mfrow=c(2,3))####
 par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)
-plot(cal_season_mean2(data,1990,2005),ylab="Concentration",xlab="",pch=16,type="o")
-plot(cal_season_mean2(data,1990,2009),ylab="Concentration",xlab="",pch=16,type="o")
+x=1990:1995
+y=cal_season_mean2(data,1990,1995)
+plot(x,y,ylab="Concentration",xlab="",pch=16,type="o")
+plot(cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
 plot(cal_season_mean2(data,1993,2009),ylab="Concentration",xlab="",pch=16,type="o")
 plot(cal_season_mean2(data,1993,2010),ylab="Concentration",xlab="",pch=16,type="o")

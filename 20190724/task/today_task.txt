@@ -1,0 +1,8 @@
+1. Read the book chapter about plotting figures and these websites.
+(line plot)
+https://www.r-graph-gallery.com/119-add-a-legend-to-a-plot/
+(histograms)
+https://www.r-graph-gallery.com/2-two-histograms-with-melt-colors/
+
+2. Plot the timeseries of summer ozone concentrations for four sites in one figure. The figure should include a title and a legend. Use different colors and symbols for different sites. 
+3. Plot the histogram of ozone concentrations across all sites in the US.

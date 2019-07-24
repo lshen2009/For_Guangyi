@@ -1,66 +1,389 @@
-setwd("~/Summer_tutor/For_Guangyi/20190722/sample_code")
-data=read.csv("small_data.csv")
-data=read.csv("small_data.csv",header=TRUE)
-data
-setwd("~/Summer_tutor/For_Guangyi/20190722/sample_code")#
-data=read.csv("small_data.csv",header=TRUE)
-data
-plot(data[,'mean'])
-plot(data[,'mean'],pch=16,type="l")
-plot(data[,'mean'],pch=16,type="o")
-#====plot a simple figure ====#
-dev.new(width=5,height=2.8)#
-par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
-plot(data[,'mean'],pch=16,type="o")
+1.06^10
+8750*1.066
+8750*1.066^2
+12/72
+2^20
+2^20/2^10
+2.88+0.4
+3.3*3900
+14*1e8*0.04
+14*1e8*0.04/10000
+158.9/158
+158.9/157
+0.24*1.65
+0.24*1.7
+0.26*1.7
+200/400
+10000/3600
+10000/500
+20*10
+20000/230
+500/50
+500/60
+pnorm(1)
+24.6*1.72
+24.6*1.81
+strdates=format(seq(as.Date("2014-01-01"),as.Date("2014-01-04"),by="m"),"%Y%m%d")
+strdates
+strdates=format(seq(as.Date("2014-01-01"),as.Date("2014-01-04"),by="d"),"%Y%m%d")
+strdates
+strdates=format(seq(as.Date("2013-09-01"),as.Date("2014-08-01"),by="m"),"%Y%m%d")
+strdates=format(seq(as.Date("2013-09-01"),as.Date("2014-08-01"),by="d"),"%Y%m%d")
+strdates
+DD=as.numeric(format(strdates,"%d"))
+format(strdates,"%d")
+strdates
+DD=as.numeric(substr(strdates,7,8))
+DD
+strdates=format(seq(as.Date("2013-09-01"),as.Date("2015-06-01"),by="d"),"%Y%m%d")
+strdates
+strdates=format(seq(as.Date("2013-09-01"),as.Date("2015-06-31"),by="d"),"%Y%m%d")
+strdates=format(seq(as.Date("2013-09-01"),as.Date("2015-06-30"),by="d"),"%Y%m%d")
+strdates
+DD=as.numeric(substr(strdates,7,8))
+ind=(DD<=5)
+strdates[ind]
+6*5*1.5
+ss=load("test.Rdata")#
+y=apply(result,c(1),quantile,probs=0.5,na.rm=TRUE)#
+round(y,3)#
+round(result[,212],3)#
+round(result[,205],3)#
+round(result[,202],3)#
+round(result[,206],3)#
+plot(y,xlim=c(1,20))#
+plot(result[,212],xlim=c(5,20))
+ss="0.207 0.340 0.382 0.402 0.509 0.500 0.438 0.375 0.343 0.385 0.405 0.485 0.453 0.473 0.471 0.484 0.577 0.562 0.464 0.418 0.362 0.371 0.696 0.658 0.484"
+strsplit(ss,"[ ]")
+strsplit(ss,"[ ]")[[1]]
+y=as.numeric(strsplit(ss,"[ ]")[[1]])
+plot(y)
+ss="0.271 0.482 0.595 0.680 0.799 0.816 0.764 0.703 0.709 0.754 0.852 0.940 0.928 0.849 0.827 0.860 0.943 0.939 0.838 0.791 0.743 0.790 0.821 0.862 0.799"#
+y=as.numeric(strsplit(ss,"[ ]")[[1]])#
+plot(y)
+ss="0.171 0.274 0.341 0.352 0.455 0.466 0.398 0.344 0.311 0.319 0.374 0.414 0.436 0.476 0.504 0.642 0.707 0.769 0.726 0.546 0.329 0.346 0.664 0.613 0.440"#
+y=as.numeric(strsplit(ss,"[ ]")[[1]])#
+plot(y)
+ss="0.607 0.764 0.807 0.760 0.799 0.723 0.818 0.837 0.731 0.680 0.742"#
+y=as.numeric(strsplit(ss,"[ ]")[[1]])#
+plot(y)
+ss="0.383 0.776 0.923 0.824 0.735 0.703 0.735 0.767 0.738 0.709 0.769"#
+y=as.numeric(strsplit(ss,"[ ]")[[1]])#
+plot(y)
+ss="0.452 0.556 0.517 0.658 0.640 0.391 0.405 0.443 0.482 0.417 0.430"#
+y=as.numeric(strsplit(ss,"[ ]")[[1]])#
+plot(y)
+ss="4.650 2.573 1.786 1.442 1.400 1.411 1.622 8.226 3.470 2.830 4.199"#
+y=as.numeric(strsplit(ss,"[ ]")[[1]])#
+plot(y)
+ss="0.607 0.764 0.807 0.760 0.799 0.723 0.818 0.837 0.731 0.680 0.742"#
+y=as.numeric(strsplit(ss,"[ ]")[[1]])#
+plot(y)
+ss="0.175 0.330 0.354 0.337 0.362 0.342 0.332 0.301 0.289 0.302 0.427 0.449 0.319 0.335 0.425"#
+y=as.numeric(strsplit(ss,"[ ]")[[1]])#
+plot(y)
+plot(y,type="l")
+plot(y,type="l",ylim=c(0,4))
+ss1="0.247 0.240 0.238 0.233 0.236 0.260 0.251 0.276 0.281 0.255 0.253 0.379"#
+ss2="0.175 0.330 0.354 0.337 0.362 0.342 0.332 0.301 0.289 0.302 0.427 0.449 0.319 0.335 0.425 0.546"#
+y1=as.numeric(strsplit(ss1,"[ ]")[[1]])#
+y2=as.numeric(strsplit(ss2,"[ ]")[[1]])#
+plot(y1,type="o",ylim=c(0,1))#
+lines(y2,pch=16)
+52/12
+52*16/12
+52*16/12/6.7
+168/6.77
+1500*3600
+1500*360
+strdates=format(seq(as.Date("2013-09-01"),as.Date("2014-08-01"),by="m"),"%Y%m%d")
+strdates
+strdates=format(seq(as.Date("2013-09-03"),as.Date("2014-08-03"),by="m"),"%Y%m%d")
+strdates
+1000*4000
+1000*4000/1e4
+104-59
+59+104
+131+32
+132+32+40
+104+131-32
+131+32-203
+90+37-196
+37+196+69
+196-69-302
+-69+302+175
+5/4
+4/1.25
+1.25/3.2
+3.2/0.0390625
+3.2/0.390625
+3.2/0.391
+0.391/8.184
+0.96*0.4
+0.6*0.93+0.4*0.96
+-111+330+249
+0.25*0.78
+0.25*0.78+0.4*0.85
+0.25*0.78+0.4*0.85-0.85
+0.315/0.35
+46700-800
+45900/26
+45900*0.8/26
+52*7
+46700-800
+45900*0.8/24
+46700/52
+46700/52*2*0.8
+20+20+45+25+40
+215、150
+215/150
+91+29
+91+60
+0.14*6.9
+0.142*6.9
+0.142*6.93
+0.142*6.94
+0.144*6.94
+3.56/0.14
+3560+16500+1384+5745+2500
+library(ncdf4)
+filename="~/Dropbox/public/MEIC/2_GC_inputs/Final/MEIC_HCHO.05x0666.nc"
+datafile=nc_open(filename)
+datafile
+200*0.2
+32/160
+160/32
+12000/86999785
+12000/86999785*1000
+12000/86999785*1000)
+12000/86999785*10000
+86999785*0.4/10000
+16/60
+40/54
+55/34
+22.5/3.4
+15000/86999785*100
+25000
+4000+6000+5000+2000
+2019-1944
+55/3.4
+250/60
+100*60*20
+100*60*20/1e6
+1e5
+1e5/(100*60)
+2^20
+13/60*0.5
+52.5+3.5+2.6+1.8+0.7+0.5+0.5+2.1
+52.5+3.5+2.6+1.8+0.7+0.5+0.5
+6.3/(6.3+52.5)
+13/60
+3.2+1.6+1
+1/11
+log(7)
+log(7)/log(2)
+x=1:100
+x
+ind=(x>=50)
+ind
+ind=which(x>=50)
+ind
+x=1:100+100
+x
+ind=which(x>=150)
+ind
+x[ind]
+pi
+R=3#
+pi*R*R
+cal_area=function(R){#
+  area=pi*R*R#
+  return(area)  	#
+}
+cal_area(10)
+cal_area(100)
+cal_area(10*10)
+cal_area(10)
+cal_area=function(R,beishu){#
+  area=pi*R*R#
+  area=area*beishu#
+  return(area)  	#
+}
+x=10
+x=x*10
+x
+x=x*x
+x
+R
+area=pi*R*R
+area
+beishu=10
+area=area*beishu
+area
+cal_area=function(R,beishu){#
+  area=pi*R*R#
+  area=area*beishu#
+  return(area)  	#
+}#
+cal_area(10)
+cal_area(10,1000)
+cal_area=function(R,beishu=5){#
+  area=pi*R*R#
+  area=area*beishu#
+  return(area)  	#
+}
+cal_area(10)
+cal_area(10,10)
+cal_area(R=10,beishu=10)
+cal_area(10,10)
+cal_area(10,beishu=10)
+cal_area(10,beishu=20)
+cal_area=function(R,beishu=5){#
+  area=pi*R*R*3#
+  area=area*beishu#
+  return(area)  	#
+}#
+cal_area(10,beishu=10)#
+cal_area(10,beishu=20)
 #change your working directory#
 setwd("~/Summer_tutor/For_Guangyi/20190722/sample_code")#
-#read the data#
 data=read.csv("small_data.csv",header=TRUE)#
-#
-#====plot a simple figure ====#
-dev.new(width=5,height=2.8)#
-par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
-plot(data[,'mean'],pch=16,type="o",xlab="",ylab="O3 concentrations")
-#change your working directory#
-setwd("~/Summer_tutor/For_Guangyi/20190722/sample_code")#
-#read the data#
-data=read.csv("small_data.csv",header=TRUE)#
-#
-#====plot a simple figure ====#
-dev.new(width=5,height=2.8)#
-par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
-plot(data[,'mean'],pch=16,type="o",xlab="",ylab="O3 concentrations")
-data
-y=data[,"mean"]
 y=data[,"mean"]#
 y[y<=-999]=NA#
 data[,"mean"]=y
-#====plot a simple figure ====#
-dev.new(width=5,height=2.8)#
-par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
-plot(data[,'mean'],pch=16,type="o",xlab="",ylab="O3 concentrations")
-yr1=1990#
-yr2=2000#
-season_mean=array(NA,yr2-yr1+1)
-year=2000
-ind=(data[,"year"]==year & date[,"month"]>=6 & date[,"month"]<=8)
-ind=(data[,"year"]==year & data[,"month"]>=6 & data[,"month"]<=8)
-data[ind,]
-data[ind,"mean"]
-yr1=1990#
-yr2=2000#
-season_mean=array(NA,yr2-yr1+1)#
-for(year in yr1:yr2){#
-	ind=(data[,"year"]==year & data[,"month"]>=6 & data[,"month"]<=8)#
-	season_mean[year-yr1+1]=mean(data[ind,"mean"],na.rm=TRUE)#
+cal_season_mean=function(data,yr1=1990,yr2=2000){#These are input parameters#
+   season_mean=array(NA,yr2-yr1+1)#
+   for(year in yr1:yr2){#loop over each year#
+	  ind=(data[,"year"]==year & data[,"month"]>=6 & data[,"month"]<=8)#
+	  season_mean[year-yr1+1]=mean(data[ind,"mean"],na.rm=TRUE)#
+   }#
+   return(season_mean)#We need to return a value#
 }
-season_mean
+yr1=1990;yr2=1997
+yr1=1990;yr2=1997#
 dev.new(width=5,height=2.8)#
 par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
-plot(yr1:yr2,season_mean,pch=16,type="o",xlab="",ylab="O3 concentrations")
-?array
-array(0,c(3,4))
-array(0,3)
-array(1:3, c(2,4)) # recycle 1:3 "2 2/3 times"
-7.9+1.2+12.9+8.3+27.3+1
-12.9+8.3+27.3
+x=yr1:yr2
+cal_season_mean(data,yr1,yr2)
+y= cal_season_mean(data,yr1,yr2)#Call the function
+y
+plot(yr1:yr2,y,pch=16,type="o",xlab="",ylab="O3 concentrations")
+yr1=1991;yr2=1997#
+x=yr1:yr2#
+y= cal_season_mean(data,yr1,yr2)#Call the function#
+plot(yr1:yr2,y,pch=16,type="o",xlab="",ylab="O3 concentrations")
+yr1=1991;yr2=1995#
+x=yr1:yr2#
+y= cal_season_mean(data,yr1,yr2)#Call the function#
+plot(yr1:yr2,y,pch=16,type="o",xlab="",ylab="O3 concentrations")
+tapply
+ind=(data[,"year"]>=yr1 & data[,"year"]<=yr2 & data[,"month"]>=6 & data[,"month"]<=8)
+data[ind,"mean"]
+yr2
+data
+data[ind,"year"]
+season_mean=tapply(data[ind,"mean"],data[ind,"year"],mean,na.rm=TRUE)
+season_mean
+tapply
+season_mean=tapply(data[ind,"mean"],data[ind,"year"],mean,na.rm=TRUE)
+cal_season_mean2=function(data,yr1=1990,yr2=2000){#
+   ind=(data[,"year"]>=yr1 & data[,"year"]<=yr2 & data[,"month"]>=6 & data[,"month"]<=8)#
+   #Here I use tapply to make my code succinct#
+   season_mean=tapply(data[ind,"mean"],data[ind,"year"],mean,na.rm=TRUE)#
+   return(season_mean)#
+}
+y= cal_season_mean(data,yr1,yr2)#Call the function
+y= cal_season_mean(data,yr1,yr2)#Call the function#
+y2= cal_season_mean2(data,yr1,yr2)#Call the function
+y
+y2
+dev.new(width=5,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(2,2))#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(cal_season_mean2(data,1990,2005),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1990,2009),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1993,2009),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1993,2010),ylab="Concentration",xlab="",pch=16,type="o")
+dev.new(width=5,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(2,2))#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2005,cal_season_mean2(data,1990,2005),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1990,2009),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1993,2009),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1993,2010),ylab="Concentration",xlab="",pch=16,type="o")
+cal_season_mean2(data,1990,2005)
+dev.new(width=5,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(2,2))#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1993,2009),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1993,2010),ylab="Concentration",xlab="",pch=16,type="o")
+dev.new(width=5,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(2,3))#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1993,2009),ylab="Concentration",xlab="",pch=16,type="o")#
+plot(cal_season_mean2(data,1993,2010),ylab="Concentration",xlab="",pch=16,type="o")
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(1.3, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.2, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(2, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=18)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(1.4, 1.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(1.4, 0.4, 1), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(1.4, 0.4, 0), tcl=-1.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.7, 0.6, 0.45, 0.6), mgp=c(1.4, 0.4, 0), tcl=+0.2, ps=11)#
+plot(1990:2000,cal_season_mean2(data,1990,2000),ylab="Concentration",xlab="",pch=16,type="o")
+area=100#
+cal_area=function(R,beishu=5){#
+  area=pi*R*R*3#
+  area=area*beishu#
+  return(area)  	#
+}
+cal_area(0.01,beishu=1)
+area
+area=100
+area=function(R,beishu=5){#
+  area=pi*R*R*3#
+  area=area*beishu#
+  return(area)  	#
+}
+area
+x=1990:2000#
+y=cal_season_mean2(data,1990,2000)#
+plot(x,y,ylab="Concentration",xlab="",pch=16,type="o")
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+x=1990:1995#
+y=cal_season_mean2(data,1990,1995)#
+plot(x,y,ylab="Concentration",xlab="",pch=16,type="o")
