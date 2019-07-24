@@ -61,3 +61,6 @@ dev.new(width=4.5,height=2.8)
 par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)
 hist(concentration,20,main="Ozone Concentration across the US",xlab="Ozone Concentration",col=8,border =1,cex.main=1,font.main=1,breaks=30)
 box()
+
+
+#=========================
