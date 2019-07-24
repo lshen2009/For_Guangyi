@@ -1,4 +1,4 @@
-1. Read the book chapters about plotting figures and these websites.
+1. Read the book chapter about plotting figures and these websites.
 (line plot)
 https://www.r-graph-gallery.com/119-add-a-legend-to-a-plot/
 (histograms)
