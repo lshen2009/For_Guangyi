@@ -12,3 +12,9 @@ ID lon lat mean median max min std
 2  XX  XX  XX    XX     XX  XX  XX
 3  XX  XX  XX    XX     XX  XX  XX
 (7) Write the matrix in Step5 into a csv file. Learn how to use write.csv function.
+
+Learn the linear regression
+(8) For simple linear regression, check this website
+http://www.r-tutor.com/elementary-statistics/simple-linear-regression
+(9) For multiple linear regression, check this
+https://www.datacamp.com/community/tutorials/linear-regression-R
