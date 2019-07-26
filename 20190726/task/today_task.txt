@@ -1,0 +1,12 @@
+Plot
+
+(1) Calculate the linear trends of summertime mean ozone concentrations for each site.
+(2) Plot the linear trends on a map.
+
+Plays with the data
+(3) For each year, calculate the number of sites that have observations. Learn how to use the apply function.
+(4) For each site, calculate the fraction of missing data.
+
+Store the data
+(5) Store the data into a 3D matrix (year x month x site). More specifically, the dimension of the matrix is (2016-1990+1)x3x52. Then save this matrix into a R object.
+https://www.math.ucla.edu/~anderson/rw1001/library/base/html/save.html
