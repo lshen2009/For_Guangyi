@@ -1,0 +1,9 @@
+Download temperature data
+1. Go to this website 
+https://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis.surface.html
+
+Download “Monthly Mean” air temperature.
+
+2. Install ncdf4 package.
+
+3. Learn Function_simple.R
