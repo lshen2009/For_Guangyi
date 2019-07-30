@@ -1,0 +1,16 @@
+Download temperature data
+1. Calculate the mean temperature for each grid box during 1990-2016. 
+
+2. Plot the multi-year mean (Step 1) on a map. Use the function plote.field.
+
+3. Find the gridbox where Site 1 is located. Then extract the monthly mean temperature of that gridbox.
+
+4. Calculate the ozone anomaly in Site 1, which can be obtained by removing the long-term linear trends.
+Let’s say y is ozone concentrations
+x=1:length(y)
+fit<-lm(y~x)
+y$residual is the anomaly
+
+5. Calculate the correlation of temperature (from Step 3) and ozone anomaly (from Step 4).
+
+6. Repeat Step 3-5 over all sites.
