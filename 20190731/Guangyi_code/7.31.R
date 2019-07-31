@@ -42,7 +42,6 @@ read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pres
 aa=read_NCEP("air.mon.mean.nc")
 names(aa)
 data=aa$data
-data[1,1,]
 lat=aa$lat
 lon=aa$lon-360
 date=aa$date
