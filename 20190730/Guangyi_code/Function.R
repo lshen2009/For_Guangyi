@@ -211,3 +211,14 @@ cal.season.mean=function(y){
 	}
 	return(y2)
 }
+
+
+
+cal.season_mean=function(spdata, date, start_month, end_month, start_yr, end_yr){
+	result=array(NA, c(dim(spdata)[1], dim(spdata)[2], (end_yr-start_yr+1)))
+	for(year in start_yr: end_yr){
+		ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)
+		result[,,year-start_yr+1]=apply(spdata[,,ind],c(1,2),mean,na.rm=TRUE)
+	}
+	return(result)
+}
