@@ -61,7 +61,7 @@ read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pres
   #name="air.mon.mean.nc"
   #xlim is the range of longitude
   #ylim is the range of latitude	
-  datadir='/Users/lulushen/Summer_tutor/For_Guangyi/20190729/'
+  datadir='~/Summer_tutor/For_Guangyi/20190729/'
   datafile = nc_open(paste(datadir,name,sep=''))
   
   lon = ncvar_get(datafile, varid='lon') #read the longitude
@@ -101,7 +101,7 @@ read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pres
 #name="air.mon.mean.nc"
 #xlim is the range of longitude
 #ylim is the range of latitude	
-datadir='/Users/lulushen/Summer_tutor/For_Guangyi/20190729/'
+datadir='~/Summer_tutor/For_Guangyi/20190729/'
 datafile = nc_open(paste(datadir,name,sep=''))
 lon = ncvar_get(datafile, varid='lon')#read longitude
 lat = ncvar_get(datafile, varid='lat')#read latitude
@@ -204,7 +204,7 @@ linear.detrend=function(temp){
 	return(spdata)
 }
 
-cal.season.mean=function(y){
+cal.JJA.mean=function(y){
 	y2=array(NA,length(y)/3)
 	for(k in 1:length(y2)){
 		y2[k]=mean(y[(3*k-2):(3*k)],na.rm=T)

@@ -3,35 +3,39 @@ rm(list=ls())
 library(fields)
 library(maps);library(ncdf4)
 
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")
+setwd("~/Summer_tutor/For_Guangyi/20190730/Guangyi_code")
 #---- load functions ----
 source("Function.R")
 #------------------------
-ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(25,50))
+ss=read_NCEP("air.mon.mean.nc",xlim=c(210,290),ylim=c(10,70))
 names(ss)
 data=ss$data
 lon=ss$lon-360
 lat=ss$lat
 date=ss$date
+data=cal.season_mean(data,date,6,8,1990,2016)
 # data=aperm(apply(data,c(1,2), cal.season.mean),c(2,3,1))
 # data=aperm(apply(data,c(1,2), mov.detrend),c(2,3,1))
 
+# diff=aa$data-ss$data
+
 #Repeat all sites
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi")
+setwd("~/Summer_tutor/For_Guangyi")
 ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)
 ozone_data[ozone_data<=-999]=NA
 o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)
 o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)
-
+ID=1
 sites_correlation = function(ID){  
   ind1=which.min(abs(lon-o_lon[ID]))
   ind2=which.min(abs(lat-o_lat[ID]))  
-  monthly_mean_site= cal.season.mean(data[ind1,ind2,])
+  #monthly_mean_site= cal.season.mean(data[ind1,ind2,])
+  monthly_mean_site=data[ind1,ind2,]
   
   ind3=(ozone_data[,"ID"]==ID)
-  y= cal.season.mean(ozone_data[ind3,"mean"])
+  y= cal.JJA.mean(ozone_data[ind3,"mean"])
   # anormaly= linear.detrend(y)
-  correlation=cor.test(linear.detrend(monthly_mean_site), linear.detrend (y))$estimate
+  correlation=cor.test((monthly_mean_site), linear.detrend (y))$estimate
   
   return(correlation)
 }
