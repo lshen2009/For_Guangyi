@@ -1,0 +1,10 @@
+Download temperature data
+1. Calculate the summer mean temperature and summer mean ozone by year.
+2. Remove the linear trend of temperature and ozone.
+3. Calculate the correlation coefficient of detrended ozone and temperature.
+
+Then try to download a few more variables from here
+https://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis.surface.html
+
+Calculate the correlations with relative humidity, U-wind and V-wind. 
+Plot these correlations.
