@@ -4,6 +4,6 @@ https://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis.surface.html
 Calculate the correlations with other meteorological variables like relative humidity, U-wind and V-wind. 
 Plot these correlations.
 
-Then build a multiple linear regression model to predict the ozone anomaly (after removing the linear trend). Use temperature, relative humidity, U-wind and V-wind as the covariates. Check how much variance can you explain with this model.
+Then build a multiple linear regression model to predict the ozone anomaly (after removing the linear trend). Use temperature, relative humidity, U-wind and V-wind as the covariates. Check how much variance you can explain with this model.
 
 You will find some variables are not important in some sites. Then you can use the stepwise (check step function in R) process to remove these variables from the model. Then  check again the explained variance of your model. 
