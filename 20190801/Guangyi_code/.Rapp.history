@@ -1,0 +1,13 @@
+x=1:5
+y=rnorm(x)
+fit<-lm(y~x)
+summary(fit)[[4]]
+summary(fit)[[1]]
+summary(fit)[[2]]
+summary(fit)[[3]]
+summary(fit)[[4]]
+summary(fit)[[5]]
+summary(fit)[[6]]
+summary(fit)[[7]]
+summary(fit)
+summary(fit)$r.squared

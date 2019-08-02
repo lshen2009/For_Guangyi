@@ -56,47 +56,6 @@ plot.field = function(spdata, lon.map, lat.map, type=NULL, same=FALSE, zlim=NULL
 }
 
 
-
-read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){
-  #name="air.mon.mean.nc"
-  #xlim is the range of longitude
-  #ylim is the range of latitude	
-  datadir='~/Summer_tutor/For_Guangyi/20190729/'
-  datafile = nc_open(paste(datadir,name,sep=''))
-  
-  lon = ncvar_get(datafile, varid='lon') #read the longitude
-  lat = ncvar_get(datafile, varid='lat') #read the latitude
-  hours = ncvar_get(datafile, varid='time') #read the time
-  
-  days=hours/24#convert to days
-  dtm <- as.Date("1800-01-01")#
-  str_time=dtm + days
-  date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))
-  
-  ind1=which(lon>=xlim[1] & lon<=xlim[2])
-  ind2=which(lat>=ylim[1] & lat<=ylim[2])
-  ind3=which(date[,1]>=start_yr & date[,1]<=end_yr)
-  lon=lon[ind1]
-  lat=lat[ind2]
-  date=date[ind3,]
-  
-  #read the air temperature data
-  output_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1]), count=c(length(ind1),length(ind2),length(ind3)), varid="air")
-  
-  #lat is in a decreasing order, now reorder it
-  output_data=output_data[,length(lat):1,]#revert along the second order
-  lat=rev(lat)
-
-  
-  ind4=which(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)
-  output_data=output_data[,,ind4]
-  date=date[ind4,]
-  
-  return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= date))
-}
-
-
-
 read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){
 #name="air.mon.mean.nc"
 #xlim is the range of longitude
@@ -176,21 +135,6 @@ plot.site = function(spdata, latlon, xlim=NULL, ylim=NULL, pch=19, type=NULL, zl
 	if (Pacific.centric) map('world2', add=TRUE,col=8) else map('world', add=TRUE,col=8)
 }
 
-mov.avg.wgt=function(data, weights) {
-	dum = length(weights)/2 - 0.5
-	data.long = c(rep(NaN, times=dum), data, rep(NaN, times=dum))
-	m.avg = rep(0, times=length(data))
-	for (t in 1:length(data)) {
-		sum.weights = sum(weights*(data.long[t:(t+dum*2)]/data.long[t:(t+dum*2)]), na.rm=TRUE)
-		m.avg[t] = sum(data.long[t:(t+dum*2)]*weights/sum.weights, na.rm=TRUE)
-	}
-	return(m.avg)
-}
-
-mov.detrend=function(temp,len=7){
-	  ap=mov.avg.wgt(temp, rep(1,len))	   	  
-	  return(as.numeric(temp-ap))
-}
 
 linear.detrend=function(temp){
 	xx=1:length(temp)
@@ -204,17 +148,10 @@ linear.detrend=function(temp){
 	return(spdata)
 }
 
-cal.JJA.mean=function(y){
-	y2=array(NA,length(y)/3)
-	for(k in 1:length(y2)){
-		y2[k]=mean(y[(3*k-2):(3*k)],na.rm=T)
-	}
-	return(y2)
-}
-
 
 cal.season_mean=function(spdata, date, start_month, end_month, start_yr, end_yr){
 	if(length(dim(spdata))==3){
+	#if it is a 3D matrix	
 	  result=array(NA, c(dim(spdata)[1], dim(spdata)[2], (end_yr-start_yr+1)))
 	  for(year in start_yr: end_yr){
 		ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)
@@ -223,6 +160,7 @@ cal.season_mean=function(spdata, date, start_month, end_month, start_yr, end_yr)
 	}
 	
 	if(length(dim(spdata))<=1){
+	 #if it is a vector
 	  result=array(NA, c((end_yr-start_yr+1)))
 	  for(year in start_yr: end_yr){
 		ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)
