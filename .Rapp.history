@@ -3,141 +3,23 @@ rm(list=ls())#
 library(fields)#
 library(maps);library(ncdf4)#
 #
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
+setwd("~/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
 #---- load functions ----#
 source("Function.R")#
 #------------------------#
-ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(25,50))#
+ss=read_NCEP("air.mon.mean.nc",xlim=c(210,290),ylim=c(10,70))#
 names(ss)#
 data=ss$data#
 lon=ss$lon-360#
 lat=ss$lat#
 date=ss$date#
-# data=aperm(apply(data,c(1,2), cal.season.mean),c(2,3,1))#
-# data=aperm(apply(data,c(1,2), mov.detrend),c(2,3,1))#
-#
-#Repeat all sites#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi")#
-ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
-ozone_data[ozone_data<=-999]=NA#
-o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-#
-sites_correlation = function(ID){  #
-  ind1=which.min(abs(lon-o_lon[ID]))#
-  ind2=which.min(abs(lat-o_lat[ID]))  #
-  monthly_mean_site= cal.season.mean(data[ind1,ind2,])#
-  ind3=(ozone_data[,"ID"]==ID)#
-  y= cal.season.mean(ozone_data[ind3,"mean"])#
-  # anormaly= linear.detrend(y)#
-  correlation=cor.test(linear.detrend(monthly_mean_site), linear.detrend (y))$estimate#
-  return(correlation)#
-}#
-#
-all_sites_correlation=array(NA,52)#
-for(ID in 1:52){#
-  all_sites_correlation[ID]=sites_correlation(ID)#
-}#
-all_sites_correlation#
-# mean(all_sites_correlation)#
-#
-plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6))
-#part1: grid box average temperature#
-rm(list=ls())#
-library(fields)#
-library(maps);library(ncdf4)#
-#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
-#---- load functions ----#
-source("Function.R")#
-#------------------------#
-ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(25,50))#
-names(ss)#
-data=ss$data#
-lon=ss$lon-360#
-lat=ss$lat#
-date=ss$date
-#part1: grid box average temperature#
-rm(list=ls())#
-library(fields)#
-library(maps);library(ncdf4)#
-#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
-#---- load functions ----#
-source("Function.R")#
-#------------------------#
-ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(25,50))#
-names(ss)#
-data=ss$data#
-lon=ss$lon-360#
-lat=ss$lat#
-date=ss$date
-#part1: grid box average temperature#
-rm(list=ls())#
-library(fields)#
-library(maps);library(ncdf4)#
-#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
-#---- load functions ----#
-source("Function.R")#
-#------------------------
-#part1: grid box average temperature#
-rm(list=ls())#
-library(fields)#
-library(maps);library(ncdf4)#
-#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
-#---- load functions ----#
-source("Function.R")#
-#------------------------#
-ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(25,50))#
-names(ss)#
-data=ss$data#
-lon=ss$lon-360#
-lat=ss$lat#
-date=ss$date
-dim(data)
 data=cal.season_mean(data,date,6,8,1990,2016)
-dim(data)
-#Repeat all sites#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi")#
-ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
-ozone_data[ozone_data<=-999]=NA#
-o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)
-cal.JJA.mean=function(y){#
-	y2=array(NA,length(y)/3)#
-	for(k in 1:length(y2)){#
-		y2[k]=mean(y[(3*k-2):(3*k)],na.rm=T)#
-	}#
-	return(y2)#
-}
-#part1: grid box average temperature#
-rm(list=ls())#
-library(fields)#
-library(maps);library(ncdf4)#
-#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
-#---- load functions ----#
-source("Function.R")#
-#------------------------#
-ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(25,50))#
-names(ss)#
-data=ss$data#
-lon=ss$lon-360#
-lat=ss$lat#
-date=ss$date#
-data=cal.season_mean(data,date,6,8,1990,2016)#
-# data=aperm(apply(data,c(1,2), cal.season.mean),c(2,3,1))#
-# data=aperm(apply(data,c(1,2), mov.detrend),c(2,3,1))#
-#
-#Repeat all sites#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi")#
+setwd("~/Summer_tutor/For_Guangyi")#
 ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
 ozone_data[ozone_data<=-999]=NA#
 o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
 o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-#
+ID=1#
 sites_correlation = function(ID){  #
   ind1=which.min(abs(lon-o_lon[ID]))#
   ind2=which.min(abs(lat-o_lat[ID]))  #
@@ -146,51 +28,100 @@ sites_correlation = function(ID){  #
   ind3=(ozone_data[,"ID"]==ID)#
   y= cal.JJA.mean(ozone_data[ind3,"mean"])#
   # anormaly= linear.detrend(y)#
-  correlation=cor.test(linear.detrend(monthly_mean_site), linear.detrend (y))$estimate#
+  correlation=cor.test((monthly_mean_site), linear.detrend (y))$estimate#
   return(correlation)#
-}#
-#
+}
 all_sites_correlation=array(NA,52)#
 for(ID in 1:52){#
   all_sites_correlation[ID]=sites_correlation(ID)#
 }#
-all_sites_correlation#
-# mean(all_sites_correlation)#
-#
+all_sites_correlation
 plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6))
+dev.new(width=5,height=2.8)#
+plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6))
+all_sites_correlation
+dim(data)
+length(dim(spdata))==3
+spdata=data
+length(dim(spdata))==3
+ap=ozone_data[ind3,"mean"]
+ID=1
+ind3=(ozone_data[,"ID"]==ID)
+ap=ozone_data[ind3,"mean"]
+dim(ap)
+length(dim(ap))
+ID=1
+ind1=which.min(abs(lon-o_lon[ID]))#
+  ind2=which.min(abs(lat-o_lat[ID]))    #
+  monthly_mean_site=data[ind1,ind2,]
+ind3=(ozone_data[,"ID"]==ID)
+y= cal.season_mean(ozone_data[ind3,"mean"])
+dim(ozone_data)
+head(ozone_data)
+y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")])
+y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],6,8,1990,2015)
+spdata=ozone_data[ind3,"mean"]
+date=ozone_data[ind3,c("year","month")]
+date
+start_month=6
+end_month=8
+start_yr=1990
+end_yr=2016
+length(dim(spdata))
+result=array(NA, c((end_yr-start_yr+1)))
+for(year in start_yr: end_yr){#
+		ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)#
+		result[year-start_yr+1]=mean(spdata[ind],na.rm=TRUE)#
+	  }
+cal.season_mean=function(spdata, date, start_month, end_month, start_yr, end_yr){#
+	if(length(dim(spdata))==3){#
+	  result=array(NA, c(dim(spdata)[1], dim(spdata)[2], (end_yr-start_yr+1)))#
+	  for(year in start_yr: end_yr){#
+		ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)#
+		result[,,year-start_yr+1]=apply(spdata[,,ind],c(1,2),mean,na.rm=TRUE)#
+	  }#
+	}#
+	if(length(dim(spdata))<=1){#
+	  result=array(NA, c((end_yr-start_yr+1)))#
+	  for(year in start_yr: end_yr){#
+		ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)#
+		result[year-start_yr+1]=mean(spdata[ind],na.rm=TRUE)#
+	  }#
+	}	#
+	return(result)#
+}
+y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],6,8,1990,2015)
 #part1: grid box average temperature#
 rm(list=ls())#
 library(fields)#
 library(maps);library(ncdf4)#
 #
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
+setwd("~/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
 #---- load functions ----#
 source("Function.R")#
 #------------------------#
-ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(25,50))#
+ss=read_NCEP("air.mon.mean.nc",xlim=c(210,290),ylim=c(10,70))#
 names(ss)#
 data=ss$data#
 lon=ss$lon-360#
 lat=ss$lat#
 date=ss$date#
 data=cal.season_mean(data,date,6,8,1990,2016)#
-# data=aperm(apply(data,c(1,2), cal.season.mean),c(2,3,1))#
-# data=aperm(apply(data,c(1,2), mov.detrend),c(2,3,1))#
+dim(data)#
 #
 #Repeat all sites#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi")#
+setwd("~/Summer_tutor/For_Guangyi")#
 ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
 ozone_data[ozone_data<=-999]=NA#
 o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
 o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-#
+ID=1#
 sites_correlation = function(ID){  #
   ind1=which.min(abs(lon-o_lon[ID]))#
-  ind2=which.min(abs(lat-o_lat[ID]))  #
-  #monthly_mean_site= cal.season.mean(data[ind1,ind2,])#
+  ind2=which.min(abs(lat-o_lat[ID]))    #
   monthly_mean_site=data[ind1,ind2,]#
   ind3=(ozone_data[,"ID"]==ID)#
-  y= cal.JJA.mean(ozone_data[ind3,"mean"])#
+  y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],6,8,1990,2015)#
   # anormaly= linear.detrend(y)#
   correlation=cor.test((monthly_mean_site), linear.detrend (y))$estimate#
   return(correlation)#
@@ -202,848 +133,126 @@ for(ID in 1:52){#
 }#
 all_sites_correlation#
 # mean(all_sites_correlation)#
-#
+dev.new(width=5,height=2.8)#
 plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6))
-rm(list=ls())#
-library(fields)#
-library(maps)#
-library(ncdf4)#
-read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){#
-  #name="air.mon.mean.nc"#
-  #xlim is the range of longitude#
-  #ylim is the range of latitude	#
-  datadir='~/Desktop/'#
-  datafile = nc_open(paste(datadir,name,sep=''))#
-  lon = ncvar_get(datafile, varid='lon') #read the longitude#
-  lat = ncvar_get(datafile, varid='lat') #read the latitude#
-  hours = ncvar_get(datafile, varid='time') #read the time#
-  days=hours/24#convert to days#
-  dtm <- as.Date("1800-01-01")##
-  str_time=dtm + days#
-  date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))#
-  ind1=which(lon>=xlim[1] & lon<=xlim[2])#
-  ind2=which(lat>=ylim[1] & lat<=ylim[2])#
-  ind3=which(date[,1]>=start_yr & date[,1]<=end_yr)#
-  lon=lon[ind1]#
-  lat=lat[ind2]#
-  date=date[ind3,]#
-  #read the air temperature data#
-  output_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1]), count=c(length(ind1),length(ind2),length(ind3)), varid="air")#
-  #lat is in a decreasing order, now reorder it#
-  output_data=output_data[,length(lat):1,]#revert along the second order#
-  lat=rev(lat)#
-  ind4=which(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)#
-  output_data=output_data[,,ind4]#
-  date=date[ind4,]#
-  return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= date))#
-}#
-read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){#
-  #name="air.mon.mean.nc"#
-  #xlim is the range of longitude#
-  #ylim is the range of latitude	#
-  datadir='~/Desktop/'#
-  datafile = nc_open(paste(datadir,name,sep=''))#
-  lon = ncvar_get(datafile, varid='lon')#read longitude#
-  lat = ncvar_get(datafile, varid='lat')#read latitude#
-  hours = ncvar_get(datafile, varid='time')#read hours#
-  days=hours/24#convert to days#
-  dtm <- as.Date("1800-01-01")##
-  str_time=dtm + days#
-  date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))#
-  ind1=which(lon>=xlim[1] & lon<=xlim[2])#
-  ind2=which(lat>=ylim[1] & lat<=ylim[2])#
-  ind4=which(date[,1]>= start_yr & date[,1]<= end_yr)#
-  lon=lon[ind1]#
-  lat=lat[ind2]#
-  date=date[ind4,]#
-  if(!is.null(pressure)) {#
-    lev= ncvar_get(datafile, varid='level')	#
-    ind3=which(lev==pressure)#
-  }#
-  if(datafile$ndims==3){#
-    print("surface")		#
-    origin_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind4[1]), count=c(length(ind1),length(ind2),length(ind4)))#
-  }#
-  if(datafile$ndims==4){#
-    print("presure")	#
-    origin_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1],ind4[1]), count=c(length(ind1),length(ind2),1,length(ind4)))#
-  }#
-  origin =origin_data[,length(lat):1,]#
-  lat=rev(lat)#
-  nc_close(datafile)#
-  ind=(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)#
-  output_data=origin[,,ind]#
-  output_date=date[ind,]#
-  return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= output_date))#
-}#
-#
-aa=read_NCEP("air.mon.mean.nc")#
-names(aa)#
-data=aa$data#
-data[1,1,]#
-lat=aa$lat#
-lon=aa$lon#
-date=aa$date#
-#
-cal.season_mean=function(data, date, start_month=6, end_month=8, start_yr=1990, end_yr=2016){#
-  result=array(NA, c(dim(data)[1], dim(data)[2], (end_yr-start_yr+1)))#
-  for(year in start_yr: end_yr){#
-    ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)#
-    result[,,year-start_yr+1]=apply(data[,,ind],c(1,2),mean,na.rm=TRUE)#
-  }#
-  return(result)#
-}#
-newdata=cal.season_mean(data,date)#
-#------ozone data--------#
-setwd("~/Summer_tutor/For_Guangyi")#
-ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
-ozone_data[ozone_data<=-999]=NA#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  mean_value=array(NA,end_yr-start_yr+1)#
-  for(year in start_yr:end_yr){#
-    ind = (ozone_data[,"year"]==year & ozone_data[,"ID"]==ID)#
-    newdata=ozone_data[ind,]#
-    mean_value[year-start_yr+1]=tapply(newdata[,"mean"],newdata[,"ID"],mean,na.rm=TRUE)#
-  }#
-  return(mean_value)#
-}#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  ind=(ozone_data[,'ID']==ID & ozone_data[,'year']>=start_yr & ozone_data[,'year']<=end_yr)#
-  spdata=ozone_data[ind,]#
-  y=tapply(spdata[,'mean'], spdata[,'year'],mean,na.rm=T)#
-  return(y)#
-}#
-#------the corresponding temperature#
-ID=1#
-o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-#
 ind1=which.min(abs(lon-o_lon[ID]))#
-ind2=which.min(abs(lat-o_lat[ID]))#
-#
-monthly_mean_site=newdata[ind1,ind2,]#
-#
-#------#
-y = ozone_season_mean(ozone_data,ID)#
-x=1:length(y)#
-fit<-lm(y~x)#
-#
-missing.ind=is.na(y)#
-y.res=array(NA,length(y))#
-#
-y.res[!missing.ind]=resid(fit)#
-anormaly=y.res#
-#
-fit2<-lm(monthly_mean_site ~ anormaly)#
-correlation = cor.test(monthly_mean_site,anormaly)$estimate#
-#-------------all sites correlation#
-sites_correlation = function(ID){#
-  o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-  o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-  ind1=which.min(abs(lon-o_lon[ID]))#
-  ind2=which.min(abs(lat-o_lat[ID]))#
-  lon[ind1]#
-  lat[ind2]#
-  monthly_mean_site=newdata[ind1,ind2,]#
-  y = ozone_season_mean(ozone_data,ID)#
-  x=1:length(y)#
-  fit<-lm(y~x)#
-  missing.ind=is.na(y)#
-  y.res=array(NA,length(y))#
-  y.res[!missing.ind]=resid(fit)#
-  anormaly=y.res#
-  fit2<-lm(monthly_mean_site ~ anormaly)#
-  correlation = cor.test(monthly_mean_site,anormaly)$estimate#
-  return(correlation)#
-}#
-#
-all_sites_correlation=array(NA,52)#
-for(ID in 1:52){#
-  all_sites_correlation[ID]=sites_correlation(ID)#
-}#
-all_sites_correlation
-rm(list=ls())#
-library(fields)#
-library(maps)#
-library(ncdf4)#
-read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){#
-  #name="air.mon.mean.nc"#
-  #xlim is the range of longitude#
-  #ylim is the range of latitude	#
-  datadir='~/Desktop/'#
-  datafile = nc_open(paste(datadir,name,sep=''))#
-  lon = ncvar_get(datafile, varid='lon') #read the longitude#
-  lat = ncvar_get(datafile, varid='lat') #read the latitude#
-  hours = ncvar_get(datafile, varid='time') #read the time#
-  days=hours/24#convert to days#
-  dtm <- as.Date("1800-01-01")##
-  str_time=dtm + days#
-  date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))#
-  ind1=which(lon>=xlim[1] & lon<=xlim[2])#
-  ind2=which(lat>=ylim[1] & lat<=ylim[2])#
-  ind3=which(date[,1]>=start_yr & date[,1]<=end_yr)#
-  lon=lon[ind1]#
-  lat=lat[ind2]#
-  date=date[ind3,]#
-  #read the air temperature data#
-  output_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1]), count=c(length(ind1),length(ind2),length(ind3)), varid="air")#
-  #lat is in a decreasing order, now reorder it#
-  output_data=output_data[,length(lat):1,]#revert along the second order#
-  lat=rev(lat)#
-  ind4=which(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)#
-  output_data=output_data[,,ind4]#
-  date=date[ind4,]#
-  return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= date))#
-}
-rm(list=ls())#
-library(fields)#
-library(maps)#
-library(ncdf4)#
-read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){#
-  #name="air.mon.mean.nc"#
-  #xlim is the range of longitude#
-  #ylim is the range of latitude	#
-  datadir='~/Summer_tutor/For_Guangyi/20190729/'#
-  datafile = nc_open(paste(datadir,name,sep=''))#
-  lon = ncvar_get(datafile, varid='lon') #read the longitude#
-  lat = ncvar_get(datafile, varid='lat') #read the latitude#
-  hours = ncvar_get(datafile, varid='time') #read the time#
-  days=hours/24#convert to days#
-  dtm <- as.Date("1800-01-01")##
-  str_time=dtm + days#
-  date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))#
-  ind1=which(lon>=xlim[1] & lon<=xlim[2])#
-  ind2=which(lat>=ylim[1] & lat<=ylim[2])#
-  ind3=which(date[,1]>=start_yr & date[,1]<=end_yr)#
-  lon=lon[ind1]#
-  lat=lat[ind2]#
-  date=date[ind3,]#
-  #read the air temperature data#
-  output_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1]), count=c(length(ind1),length(ind2),length(ind3)), varid="air")#
-  #lat is in a decreasing order, now reorder it#
-  output_data=output_data[,length(lat):1,]#revert along the second order#
-  lat=rev(lat)#
-  ind4=which(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)#
-  output_data=output_data[,,ind4]#
-  date=date[ind4,]#
-  return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= date))#
-}#
-#
-aa=read_NCEP("air.mon.mean.nc")#
-names(aa)#
-data=aa$data#
-data[1,1,]#
-lat=aa$lat#
-lon=aa$lon#
-date=aa$date#
-#
-cal.season_mean=function(data, date, start_month=6, end_month=8, start_yr=1990, end_yr=2016){#
-  result=array(NA, c(dim(data)[1], dim(data)[2], (end_yr-start_yr+1)))#
-  for(year in start_yr: end_yr){#
-    ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)#
-    result[,,year-start_yr+1]=apply(data[,,ind],c(1,2),mean,na.rm=TRUE)#
-  }#
-  return(result)#
-}#
-newdata=cal.season_mean(data,date)#
-#------ozone data--------#
-setwd("~/Summer_tutor/For_Guangyi")#
-ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
-ozone_data[ozone_data<=-999]=NA#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  mean_value=array(NA,end_yr-start_yr+1)#
-  for(year in start_yr:end_yr){#
-    ind = (ozone_data[,"year"]==year & ozone_data[,"ID"]==ID)#
-    newdata=ozone_data[ind,]#
-    mean_value[year-start_yr+1]=tapply(newdata[,"mean"],newdata[,"ID"],mean,na.rm=TRUE)#
-  }#
-  return(mean_value)#
-}#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  ind=(ozone_data[,'ID']==ID & ozone_data[,'year']>=start_yr & ozone_data[,'year']<=end_yr)#
-  spdata=ozone_data[ind,]#
-  y=tapply(spdata[,'mean'], spdata[,'year'],mean,na.rm=T)#
-  return(y)#
-}#
-#------the corresponding temperature#
-ID=1#
-o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-#
-ind1=which.min(abs(lon-o_lon[ID]))#
-ind2=which.min(abs(lat-o_lat[ID]))#
-#
-monthly_mean_site=newdata[ind1,ind2,]#
-#
-#------#
-y = ozone_season_mean(ozone_data,ID)#
-x=1:length(y)#
-fit<-lm(y~x)#
-#
-missing.ind=is.na(y)#
-y.res=array(NA,length(y))#
-#
-y.res[!missing.ind]=resid(fit)#
-anormaly=y.res#
-#
-fit2<-lm(monthly_mean_site ~ anormaly)#
-correlation = cor.test(monthly_mean_site,anormaly)$estimate#
-#-------------all sites correlation#
-sites_correlation = function(ID){#
-  o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-  o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-  ind1=which.min(abs(lon-o_lon[ID]))#
-  ind2=which.min(abs(lat-o_lat[ID]))#
-  lon[ind1]#
-  lat[ind2]#
-  monthly_mean_site=newdata[ind1,ind2,]#
-  y = ozone_season_mean(ozone_data,ID)#
-  x=1:length(y)#
-  fit<-lm(y~x)#
-  missing.ind=is.na(y)#
-  y.res=array(NA,length(y))#
-  y.res[!missing.ind]=resid(fit)#
-  anormaly=y.res#
-  fit2<-lm(monthly_mean_site ~ anormaly)#
-  correlation = cor.test(monthly_mean_site,anormaly)$estimate#
-  return(correlation)#
-}#
-#
-all_sites_correlation=array(NA,52)#
-for(ID in 1:52){#
-  all_sites_correlation[ID]=sites_correlation(ID)#
-}#
-all_sites_correlation
-#part1: grid box average temperature#
-rm(list=ls())#
-library(fields)#
-library(maps);library(ncdf4)#
-#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
-#---- load functions ----#
-source("Function.R")#
-#------------------------#
-ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(25,50))#
-names(ss)#
-data=ss$data#
-lon=ss$lon-360#
-lat=ss$lat#
-date=ss$date#
-data=cal.season_mean(data,date,6,8,1990,2016)#
-# data=aperm(apply(data,c(1,2), cal.season.mean),c(2,3,1))#
-# data=aperm(apply(data,c(1,2), mov.detrend),c(2,3,1))
-library(fields)#
-library(maps)#
-library(ncdf4)#
-read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){#
-  #name="air.mon.mean.nc"#
-  #xlim is the range of longitude#
-  #ylim is the range of latitude	#
-  datadir='~/Summer_tutor/For_Guangyi/20190729/'#
-  datafile = nc_open(paste(datadir,name,sep=''))#
-  lon = ncvar_get(datafile, varid='lon') #read the longitude#
-  lat = ncvar_get(datafile, varid='lat') #read the latitude#
-  hours = ncvar_get(datafile, varid='time') #read the time#
-  days=hours/24#convert to days#
-  dtm <- as.Date("1800-01-01")##
-  str_time=dtm + days#
-  date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))#
-  ind1=which(lon>=xlim[1] & lon<=xlim[2])#
-  ind2=which(lat>=ylim[1] & lat<=ylim[2])#
-  ind3=which(date[,1]>=start_yr & date[,1]<=end_yr)#
-  lon=lon[ind1]#
-  lat=lat[ind2]#
-  date=date[ind3,]#
-  #read the air temperature data#
-  output_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1]), count=c(length(ind1),length(ind2),length(ind3)), varid="air")#
-  #lat is in a decreasing order, now reorder it#
-  output_data=output_data[,length(lat):1,]#revert along the second order#
-  lat=rev(lat)#
-  ind4=which(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)#
-  output_data=output_data[,,ind4]#
-  date=date[ind4,]#
-  return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= date))#
-}#
-#
-aa=read_NCEP("air.mon.mean.nc")
-diff=aa$data-ss$data
-read_NCEP
-#part1: grid box average temperature#
-rm(list=ls())#
-library(fields)#
-library(maps);library(ncdf4)#
-#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
-#---- load functions ----#
-source("Function.R")#
-#------------------------#
-ss=read_NCEP("air.mon.mean.nc",xlim=c(210,290),ylim=c(10,70))#
-names(ss)#
-data=ss$data#
-lon=ss$lon-360#
-lat=ss$lat#
-date=ss$date#
-data=cal.season_mean(data,date,6,8,1990,2016)#
-# data=aperm(apply(data,c(1,2), cal.season.mean),c(2,3,1))#
-# data=aperm(apply(data,c(1,2), mov.detrend),c(2,3,1))
-read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){#
-  #name="air.mon.mean.nc"#
-  #xlim is the range of longitude#
-  #ylim is the range of latitude	#
-  datadir='~/Summer_tutor/For_Guangyi/20190729/'#
-  datafile = nc_open(paste(datadir,name,sep=''))#
-  lon = ncvar_get(datafile, varid='lon') #read the longitude#
-  lat = ncvar_get(datafile, varid='lat') #read the latitude#
-  hours = ncvar_get(datafile, varid='time') #read the time#
-  days=hours/24#convert to days#
-  dtm <- as.Date("1800-01-01")##
-  str_time=dtm + days#
-  date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))#
-  ind1=which(lon>=xlim[1] & lon<=xlim[2])#
-  ind2=which(lat>=ylim[1] & lat<=ylim[2])#
-  ind3=which(date[,1]>=start_yr & date[,1]<=end_yr)#
-  lon=lon[ind1]#
-  lat=lat[ind2]#
-  date=date[ind3,]#
-  #read the air temperature data#
-  output_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1]), count=c(length(ind1),length(ind2),length(ind3)), varid="air")#
-  #lat is in a decreasing order, now reorder it#
-  output_data=output_data[,length(lat):1,]#revert along the second order#
-  lat=rev(lat)#
-  ind4=which(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)#
-  output_data=output_data[,,ind4]#
-  date=date[ind4,]#
-  return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= date))#
-}#
-#
-aa=read_NCEP("air.mon.mean.nc")#
-names(aa)#
-data=aa$data#
-data[1,1,]#
-lat=aa$lat#
-lon=aa$lon#
-date=aa$date
-dim(aa$data)
-dim(ss$data)
-diff=aa$data-ss$data
-diff
-dim(diff)
-max(diff)
-cal.season_mean
-cal.season_mean=function(data, date, start_month=6, end_month=8, start_yr=1990, end_yr=2016){#
-  result=array(NA, c(dim(data)[1], dim(data)[2], (end_yr-start_yr+1)))#
-  for(year in start_yr: end_yr){#
-    ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)#
-    result[,,year-start_yr+1]=apply(data[,,ind],c(1,2),mean,na.rm=TRUE)#
-  }#
-  return(result)#
-}#
-newdata=cal.season_mean(data,date)
-#------------------------#
-ss=read_NCEP("air.mon.mean.nc",xlim=c(210,290),ylim=c(10,70))#
-names(ss)#
-data=ss$data#
-lon=ss$lon-360#
-lat=ss$lat#
-date=ss$date#
-data=cal.season_mean(data,date,6,8,1990,2016)
-diff=newdata-data
-max(diff)
-min(diff)
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi")#
-ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
-ozone_data[ozone_data<=-999]=NA#
-o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)
-setwd("~/Summer_tutor/For_Guangyi")#
-ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
-ozone_data[ozone_data<=-999]=NA#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  mean_value=array(NA,end_yr-start_yr+1)#
-  for(year in start_yr:end_yr){#
-    ind = (ozone_data[,"year"]==year & ozone_data[,"ID"]==ID)#
-    newdata=ozone_data[ind,]#
-    mean_value[year-start_yr+1]=tapply(newdata[,"mean"],newdata[,"ID"],mean,na.rm=TRUE)#
-  }#
-  return(mean_value)#
-}
-ozone_season_mean(ozone_data,1)
-ID=1
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi")#
-ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
-ozone_data[ozone_data<=-999]=NA#
-o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)
-ind1=which.min(abs(lon-o_lon[ID]))#
-  ind2=which.min(abs(lat-o_lat[ID]))  #
-  #monthly_mean_site= cal.season.mean(data[ind1,ind2,])
-ind3=(ozone_data[,"ID"]==ID)#
-  y= cal.JJA.mean(ozone_data[ind3,"mean"])
-y
-cor.test((monthly_mean_site), linear.detrend (y))$estimate
-ind1=which.min(abs(lon-o_lon[ID]))#
-  ind2=which.min(abs(lat-o_lat[ID]))  #
-  #monthly_mean_site= cal.season.mean(data[ind1,ind2,])#
-  monthly_mean_site=data[ind1,ind2,]#
-  ind3=(ozone_data[,"ID"]==ID)#
-  y= cal.JJA.mean(ozone_data[ind3,"mean"])#
-  # anormaly= linear.detrend(y)#
-  correlation=cor.test((monthly_mean_site), linear.detrend (y))$estimate
-correlation
-ID=1
-o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)
-ind1=which.min(abs(lon-o_lon[ID]))#
-ind2=which.min(abs(lat-o_lat[ID]))
-newdata[ind1,ind2,]
-monthly_mean_site
-y = ozone_season_mean(ozone_data,ID)
-y
-cal.JJA.mean(ozone_data[ind3,"mean"])
-y = ozone_season_mean(ozone_data,ID)#
-x=1:length(y)#
-fit<-lm(y~x)
-missing.ind=is.na(y)#
-y.res=array(NA,length(y))#
-#
-y.res[!missing.ind]=resid(fit)#
-anormaly=y.res
-anormaly
-ind3=(ozone_data[,"ID"]==ID)#
-  y= cal.JJA.mean(ozone_data[ind3,"mean"])
-linear.detrend (y)
-monthly_mean_site
-cor.test((monthly_mean_site), linear.detrend (y))$estimate
-cor.test(monthly_mean_site,anormaly)$estimate
-rm(list=ls())#
-library(fields)#
-library(maps)#
-library(ncdf4)#
-read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){#
-  #name="air.mon.mean.nc"#
-  #xlim is the range of longitude#
-  #ylim is the range of latitude	#
-  datadir='~/Summer_tutor/For_Guangyi/20190729/'#
-  datafile = nc_open(paste(datadir,name,sep=''))#
-  lon = ncvar_get(datafile, varid='lon') #read the longitude#
-  lat = ncvar_get(datafile, varid='lat') #read the latitude#
-  hours = ncvar_get(datafile, varid='time') #read the time#
-  days=hours/24#convert to days#
-  dtm <- as.Date("1800-01-01")##
-  str_time=dtm + days#
-  date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))#
-  ind1=which(lon>=xlim[1] & lon<=xlim[2])#
-  ind2=which(lat>=ylim[1] & lat<=ylim[2])#
-  ind3=which(date[,1]>=start_yr & date[,1]<=end_yr)#
-  lon=lon[ind1]#
-  lat=lat[ind2]#
-  date=date[ind3,]#
-  #read the air temperature data#
-  output_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1]), count=c(length(ind1),length(ind2),length(ind3)), varid="air")#
-  #lat is in a decreasing order, now reorder it#
-  output_data=output_data[,length(lat):1,]#revert along the second order#
-  lat=rev(lat)#
-  ind4=which(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)#
-  output_data=output_data[,,ind4]#
-  date=date[ind4,]#
-  return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= date))#
-}#
-#
-aa=read_NCEP("air.mon.mean.nc")#
-names(aa)#
-data=aa$data#
-data[1,1,]#
-lat=aa$lat#
-lon=aa$lon#
-date=aa$date#
-#
-cal.season_mean=function(data, date, start_month=6, end_month=8, start_yr=1990, end_yr=2016){#
-  result=array(NA, c(dim(data)[1], dim(data)[2], (end_yr-start_yr+1)))#
-  for(year in start_yr: end_yr){#
-    ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)#
-    result[,,year-start_yr+1]=apply(data[,,ind],c(1,2),mean,na.rm=TRUE)#
-  }#
-  return(result)#
-}#
-newdata=cal.season_mean(data,date)#
-#------ozone data--------#
-setwd("~/Summer_tutor/For_Guangyi")#
-ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
-ozone_data[ozone_data<=-999]=NA#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  mean_value=array(NA,end_yr-start_yr+1)#
-  for(year in start_yr:end_yr){#
-    ind = (ozone_data[,"year"]==year & ozone_data[,"ID"]==ID)#
-    newdata=ozone_data[ind,]#
-    mean_value[year-start_yr+1]=tapply(newdata[,"mean"],newdata[,"ID"],mean,na.rm=TRUE)#
-  }#
-  return(mean_value)#
-}#
-ozone_season_mean(ozone_data,1)#
-#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  ind=(ozone_data[,'ID']==ID & ozone_data[,'year']>=start_yr & ozone_data[,'year']<=end_yr)#
-  spdata=ozone_data[ind,]#
-  y=tapply(spdata[,'mean'], spdata[,'year'],mean,na.rm=T)#
-  return(y)#
-}#
-#------the corresponding temperature#
-ID=1#
-o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-#
-ind1=which.min(abs(lon-o_lon[ID]))#
-ind2=which.min(abs(lat-o_lat[ID]))#
-#
-monthly_mean_site=newdata[ind1,ind2,]#
-#
-#------#
-y = ozone_season_mean(ozone_data,ID)#
-x=1:length(y)#
-fit<-lm(y~x)#
-#
-missing.ind=is.na(y)#
-y.res=array(NA,length(y))#
-#
-y.res[!missing.ind]=resid(fit)#
-anormaly=y.res#
-#
-fit2<-lm(monthly_mean_site ~ anormaly)#
-correlation = cor.test(monthly_mean_site,anormaly)$estimate
-correlation
-monthly_mean_site
-#part1: grid box average temperature#
-rm(list=ls())#
-library(fields)#
-library(maps);library(ncdf4)#
-#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
-#---- load functions ----#
-source("Function.R")#
-#------------------------#
-ss=read_NCEP("air.mon.mean.nc",xlim=c(210,290),ylim=c(10,70))#
-names(ss)#
-data=ss$data#
-lon=ss$lon-360#
-lat=ss$lat#
-date=ss$date#
-data=cal.season_mean(data,date,6,8,1990,2016)#
-# data=aperm(apply(data,c(1,2), cal.season.mean),c(2,3,1))#
-# data=aperm(apply(data,c(1,2), mov.detrend),c(2,3,1))#
-#
-# diff=aa$data-ss$data#
-#
-#Repeat all sites#
-setwd("/Users/lulushen/Summer_tutor/For_Guangyi")#
-ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
-ozone_data[ozone_data<=-999]=NA#
-o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-ID=1
-ind1=which.min(abs(lon-o_lon[ID]))#
-  ind2=which.min(abs(lat-o_lat[ID]))  #
-  #monthly_mean_site= cal.season.mean(data[ind1,ind2,])#
+  ind2=which.min(abs(lat-o_lat[ID]))    #
   monthly_mean_site=data[ind1,ind2,]
 monthly_mean_site
-ind1
-ind2
+ind3=(ozone_data[,"ID"]==ID)
+y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],6,8,1990,2015)
+y
+y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],6,8,1990,2016)
+correlation=cor.test((monthly_mean_site), linear.detrend (y))$estimate
+#part1: grid box average temperature#
 rm(list=ls())#
 library(fields)#
-library(maps)#
-library(ncdf4)#
-read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){#
-  #name="air.mon.mean.nc"#
-  #xlim is the range of longitude#
-  #ylim is the range of latitude	#
-  datadir='~/Summer_tutor/For_Guangyi/20190729/'#
-  datafile = nc_open(paste(datadir,name,sep=''))#
-  lon = ncvar_get(datafile, varid='lon') #read the longitude#
-  lat = ncvar_get(datafile, varid='lat') #read the latitude#
-  hours = ncvar_get(datafile, varid='time') #read the time#
-  days=hours/24#convert to days#
-  dtm <- as.Date("1800-01-01")##
-  str_time=dtm + days#
-  date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))#
-  ind1=which(lon>=xlim[1] & lon<=xlim[2])#
-  ind2=which(lat>=ylim[1] & lat<=ylim[2])#
-  ind3=which(date[,1]>=start_yr & date[,1]<=end_yr)#
-  lon=lon[ind1]#
-  lat=lat[ind2]#
-  date=date[ind3,]#
-  #read the air temperature data#
-  output_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1]), count=c(length(ind1),length(ind2),length(ind3)), varid="air")#
-  #lat is in a decreasing order, now reorder it#
-  output_data=output_data[,length(lat):1,]#revert along the second order#
-  lat=rev(lat)#
-  ind4=which(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)#
-  output_data=output_data[,,ind4]#
-  date=date[ind4,]#
-  return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= date))#
-}#
+library(maps);library(ncdf4)#
+setwd("~/Summer_tutor/For_Guangyi/20190730/Guangyi_code")#
+#---- load functions ----#
+source("Function.R")#
+#-------parameters-------#
+m1=6;m2=8#
+yr1=1990;yr2=2016#
+#------------------------#
+ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(20,50))#
+met_data=ss$data#
+met_lon=ss$lon-360#
+met_lat=ss$lat#
+met_date=ss$date#
+met_data=cal.season_mean(met_data,met_date,m1,m2,yr1,yr2)
+#part1: grid box average temperature#
+rm(list=ls())#
+library(fields)#
+library(maps);library(ncdf4)#
+setwd("~/Summer_tutor/For_Guangyi/20190802/Guangyi_code")
+source("Function.R")
+m1=6;m2=8#
+yr1=1990;yr2=2016#
+datadir='~/Summer_tutor/For_Guangyi/20190729/'
+#part1: grid box average temperature#
+rm(list=ls())#
+library(fields)#
+library(maps);library(ncdf4)#
+setwd("~/Summer_tutor/For_Guangyi/20190802/Guangyi_code")#
+#---- load functions ----#
+source("Function.R")#
+#-------parameters-------#
+m1=6;m2=8#
+yr1=1990;yr2=2016#
 #
-aa=read_NCEP("air.mon.mean.nc")#
-names(aa)#
-data=aa$data#
-data[1,1,]#
-lat=aa$lat#
-lon=aa$lon#
-date=aa$date#
+#------------------------#
+ss=read_NCEP("air.mon.mean.nc",datadir,xlim=c(230,300),ylim=c(20,50))#
+met_data=ss$data#
+met_lon=ss$lon-360#
+met_lat=ss$lat#
+met_date=ss$date#
+met_data=cal.season_mean(met_data,met_date,m1,m2,yr1,yr2)
+#part1: grid box average temperature#
+rm(list=ls())#
+library(fields)#
+library(maps);library(ncdf4)#
+setwd("~/Summer_tutor/For_Guangyi/20190802/Guangyi_code")#
+#---- load functions ----#
+source("Function.R")#
+#-------parameters-------#
+m1=6;m2=8#
+yr1=1990;yr2=2016#
 #
-cal.season_mean=function(data, date, start_month=6, end_month=8, start_yr=1990, end_yr=2016){#
-  result=array(NA, c(dim(data)[1], dim(data)[2], (end_yr-start_yr+1)))#
-  for(year in start_yr: end_yr){#
-    ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)#
-    result[,,year-start_yr+1]=apply(data[,,ind],c(1,2),mean,na.rm=TRUE)#
-  }#
-  return(result)#
-}#
-newdata=cal.season_mean(data,date)#
-#------ozone data--------#
+#------------------------#
+ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(20,50))#
+met_data=ss$data#
+met_lon=ss$lon-360#
+met_lat=ss$lat#
+met_date=ss$date#
+met_data=cal.season_mean(met_data,met_date,m1,m2,yr1,yr2)
+#part1: grid box average temperature#
+rm(list=ls())#
+library(fields)#
+library(maps);library(ncdf4)#
+#
+#---- load functions ----#
+source("~/Summer_tutor/For_Guangyi/20190802/Guangyi_code/Function.R")#
+#-------parameters-------#
+m1=6;m2=8#
+yr1=1990;yr2=2016#
+#
+#------read meteorological data------#
+ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(20,50))#
+met_data=ss$data#
+met_lon=ss$lon-360#
+met_lat=ss$lat#
+met_date=ss$date#
+met_data=cal.season_mean(met_data,met_date,m1,m2,yr1,yr2)#
+#
+#------read ozone data------#
 setwd("~/Summer_tutor/For_Guangyi")#
 ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
 ozone_data[ozone_data<=-999]=NA#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  mean_value=array(NA,end_yr-start_yr+1)#
-  for(year in start_yr:end_yr){#
-    ind = (ozone_data[,"year"]==year & ozone_data[,"ID"]==ID)#
-    newdata=ozone_data[ind,]#
-    mean_value[year-start_yr+1]=tapply(newdata[,"mean"],newdata[,"ID"],mean,na.rm=TRUE)#
-  }#
-  return(mean_value)#
-}#
-ozone_season_mean(ozone_data,1)#
-#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  ind=(ozone_data[,'ID']==ID & ozone_data[,'year']>=start_yr & ozone_data[,'year']<=end_yr)#
-  spdata=ozone_data[ind,]#
-  y=tapply(spdata[,'mean'], spdata[,'year'],mean,na.rm=T)#
-  return(y)#
-}#
-#------the corresponding temperature#
-ID=1#
 o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-#
-ind1=which.min(abs(lon-o_lon[ID]))#
-ind2=which.min(abs(lat-o_lat[ID]))
-ind1
-ind2
-lon
-lat
-o_lon[ID]
-rm(list=ls())#
-library(fields)#
-library(maps)#
-library(ncdf4)#
-read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){#
-  #name="air.mon.mean.nc"#
-  #xlim is the range of longitude#
-  #ylim is the range of latitude	#
-  datadir='~/Summer_tutor/For_Guangyi/20190729/'#
-  datafile = nc_open(paste(datadir,name,sep=''))#
-  lon = ncvar_get(datafile, varid='lon') #read the longitude#
-  lat = ncvar_get(datafile, varid='lat') #read the latitude#
-  hours = ncvar_get(datafile, varid='time') #read the time#
-  days=hours/24#convert to days#
-  dtm <- as.Date("1800-01-01")##
-  str_time=dtm + days#
-  date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))#
-  ind1=which(lon>=xlim[1] & lon<=xlim[2])#
-  ind2=which(lat>=ylim[1] & lat<=ylim[2])#
-  ind3=which(date[,1]>=start_yr & date[,1]<=end_yr)#
-  lon=lon[ind1]#
-  lat=lat[ind2]#
-  date=date[ind3,]#
-  #read the air temperature data#
-  output_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1]), count=c(length(ind1),length(ind2),length(ind3)), varid="air")#
-  #lat is in a decreasing order, now reorder it#
-  output_data=output_data[,length(lat):1,]#revert along the second order#
-  lat=rev(lat)#
-  ind4=which(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)#
-  output_data=output_data[,,ind4]#
-  date=date[ind4,]#
-  return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= date))#
-}#
-#
-aa=read_NCEP("air.mon.mean.nc")#
-names(aa)#
-data=aa$data#
-data[1,1,]#
-lat=aa$lat#
-lon=aa$lon-360#
-date=aa$date#
-#
-cal.season_mean=function(data, date, start_month=6, end_month=8, start_yr=1990, end_yr=2016){#
-  result=array(NA, c(dim(data)[1], dim(data)[2], (end_yr-start_yr+1)))#
-  for(year in start_yr: end_yr){#
-    ind=(date[,1]==year & date[,2]>=start_month & date[,2]<=end_month)#
-    result[,,year-start_yr+1]=apply(data[,,ind],c(1,2),mean,na.rm=TRUE)#
-  }#
-  return(result)#
-}#
-newdata=cal.season_mean(data,date)#
-#------ozone data--------#
-setwd("~/Summer_tutor/For_Guangyi")#
-ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
-ozone_data[ozone_data<=-999]=NA#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  mean_value=array(NA,end_yr-start_yr+1)#
-  for(year in start_yr:end_yr){#
-    ind = (ozone_data[,"year"]==year & ozone_data[,"ID"]==ID)#
-    newdata=ozone_data[ind,]#
-    mean_value[year-start_yr+1]=tapply(newdata[,"mean"],newdata[,"ID"],mean,na.rm=TRUE)#
-  }#
-  return(mean_value)#
-}#
-ozone_season_mean(ozone_data,1)#
-#
-ozone_season_mean=function(ozone_data,ID, start_yr=1990, end_yr=2016){#
-  ind=(ozone_data[,'ID']==ID & ozone_data[,'year']>=start_yr & ozone_data[,'year']<=end_yr)#
-  spdata=ozone_data[ind,]#
-  y=tapply(spdata[,'mean'], spdata[,'year'],mean,na.rm=T)#
-  return(y)#
-}#
-#------the corresponding temperature#
-ID=1#
-o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
-#
-ind1=which.min(abs(lon-o_lon[ID]))#
-ind2=which.min(abs(lat-o_lat[ID]))#
-#
-monthly_mean_site=newdata[ind1,ind2,]#
-#
-#------#
-y = ozone_season_mean(ozone_data,ID)#
-x=1:length(y)#
-fit<-lm(y~x)#
-#
-missing.ind=is.na(y)#
-y.res=array(NA,length(y))#
-#
-y.res[!missing.ind]=resid(fit)#
-anormaly=y.res#
-#
-fit2<-lm(monthly_mean_site ~ anormaly)#
-correlation = cor.test(monthly_mean_site,anormaly)$estimate#
-#-------------all sites correlation#
-sites_correlation = function(ID){#
-  o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
-  o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
+o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)
+sites_correlation = function(ID){  #
   ind1=which.min(abs(lon-o_lon[ID]))#
-  ind2=which.min(abs(lat-o_lat[ID]))#
-  lon[ind1]#
-  lat[ind2]#
-  monthly_mean_site=newdata[ind1,ind2,]#
-  y = ozone_season_mean(ozone_data,ID)#
-  x=1:length(y)#
-  fit<-lm(y~x)#
-  missing.ind=is.na(y)#
-  y.res=array(NA,length(y))#
-  y.res[!missing.ind]=resid(fit)#
-  anormaly=y.res#
-  fit2<-lm(monthly_mean_site ~ anormaly)#
-  correlation = cor.test(monthly_mean_site,anormaly)$estimate#
+  ind2=which.min(abs(lat-o_lat[ID]))    #
+  monthly_mean_site=met_data[ind1,ind2,]  #
+  ind3=(ozone_data[,"ID"]==ID)#
+  y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],m1,m2,yr1,yr2)#
+  correlation=cor.test((monthly_mean_site), linear.detrend(y))$estimate  #
+  return(correlation)#
+}
+all_sites_correlation=array(NA,52)#
+for(ID in 1:52){#
+  all_sites_correlation[ID]=sites_correlation(ID)#
+}#
+dev.new(width=5,height=2.8)#
+plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6))
+sites_correlation = function(ID){  #
+  ind1=which.min(abs(met_lon-o_lon[ID]))#
+  ind2=which.min(abs(met_lat-o_lat[ID]))    #
+  monthly_mean_site=met_data[ind1,ind2,]  #
+  ind3=(ozone_data[,"ID"]==ID)#
+  y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],m1,m2,yr1,yr2)#
+  correlation=cor.test((monthly_mean_site), linear.detrend(y))$estimate  #
   return(correlation)#
 }#
 #
@@ -1051,4 +260,190 @@ all_sites_correlation=array(NA,52)#
 for(ID in 1:52){#
   all_sites_correlation[ID]=sites_correlation(ID)#
 }#
-all_sites_correlation
+dev.new(width=5,height=2.8)#
+plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6))
+#part1: grid box average temperature#
+rm(list=ls())#
+library(fields)#
+library(maps);library(ncdf4)#
+#
+#---- load functions ----#
+source("~/Summer_tutor/For_Guangyi/20190802/Guangyi_code/Function.R")#
+#-------parameters-------#
+m1=6;m2=8#
+yr1=1990;yr2=2016#
+#
+#------read meteorological data------#
+ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(20,50))#
+met_data=ss$data#
+met_lon=ss$lon-360#
+met_lat=ss$lat#
+met_date=ss$date#
+met_data=cal.season_mean(met_data,met_date,m1,m2,yr1,yr2)#
+#
+#------read ozone data------#
+setwd("~/Summer_tutor/For_Guangyi")#
+ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
+ozone_data[ozone_data<=-999]=NA#
+o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
+o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
+#
+#===========================#
+sites_correlation = function(ID,met_data,met_lon,met_lat){  #
+  ind1=which.min(abs(met_lon-o_lon[ID]))#
+  ind2=which.min(abs(met_lat-o_lat[ID]))    #
+  monthly_mean_site=met_data[ind1,ind2,]  #
+  ind3=(ozone_data[,"ID"]==ID)#
+  y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],m1,m2,yr1,yr2)#
+  correlation=cor.test((monthly_mean_site), linear.detrend(y))$estimate  #
+  return(correlation)#
+}#
+#===========================#
+all_sites_correlation=array(NA,52)#
+for(ID in 1:52){#
+  all_sites_correlation[ID]=sites_correlation(ID,met_data,met_lon,met_lat)#
+}#
+#
+dev.new(width=5,height=2.8)#
+plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6))
+plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6),cex=0.7)
+dev.new(width=5,height=2.8)#
+plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6),cex=0.7)
+#==========calculate the correlations in each site==========#
+all_sites_correlation=array(NA,52)#
+for(ID in 1:52){#
+  all_sites_correlation[ID]=sites_correlation(ID,met_data,met_lon,met_lat)#
+}
+#part1: grid box average temperature#
+rm(list=ls())#
+library(fields)#
+library(maps);library(ncdf4)#
+#
+#---- load functions ----#
+source("~/Summer_tutor/For_Guangyi/20190802/Guangyi_code/Function.R")#
+#-------parameters-------#
+m1=6;m2=8#
+yr1=1990;yr2=2016#
+#
+#------read ozone data------#
+setwd("~/Summer_tutor/For_Guangyi")#
+ozone_data=read.csv("CASTNET_1990-2016.csv",header=TRUE)#
+ozone_data[ozone_data<=-999]=NA#
+o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
+o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
+#
+#=========define a function =====#
+sites_correlation = function(ID,met_data,met_lon,met_lat){  #
+  ind1=which.min(abs(met_lon-o_lon[ID]))#
+  ind2=which.min(abs(met_lat-o_lat[ID]))    #
+  monthly_mean_site=met_data[ind1,ind2,]  #
+  ind3=(ozone_data[,"ID"]==ID)#
+  y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],m1,m2,yr1,yr2)#
+  correlation=cor.test(linear.detrend(monthly_mean_site), linear.detrend(y))$estimate  #
+  return(correlation)#
+}#
+#==========Main code ==========#
+#------read meteorological data------#
+ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(20,50))#
+met_data=ss$data#
+met_lon=ss$lon-360#
+met_lat=ss$lat#
+met_date=ss$date#
+met_data=cal.season_mean(met_data,met_date,m1,m2,yr1,yr2)#
+#
+#--calculate the correlations in each site--#
+all_sites_correlation=array(NA,52)#
+for(ID in 1:52){#
+  all_sites_correlation[ID]=sites_correlation(ID,met_data,met_lon,met_lat)#
+}#
+#
+dev.new(width=5,height=2.8)#
+plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6),cex=0.7)
+rm(list=ls())#
+library(fields)#
+library(maps);library(ncdf4)#
+#
+#---- load functions ----#
+source("~/Summer_tutor/For_Guangyi/20190802/Guangyi_code/Function.R")#
+#
+#-------parameters-------#
+m1=6;m2=8#
+yr1=1990;yr2=2016#
+#
+#------read ozone data------#
+ozone_data=read.csv("~/Summer_tutor/For_Guangyi/CASTNET_1990-2016.csv",header=TRUE)#
+ozone_data[ozone_data<=-999]=NA#
+o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
+o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
+#
+#----define functions---#
+sites_correlation = function(ID,met_data,met_lon,met_lat){  #
+  ind1=which.min(abs(met_lon-o_lon[ID]))#
+  ind2=which.min(abs(met_lat-o_lat[ID]))    #
+  monthly_mean_site=met_data[ind1,ind2,]  #
+  ind3=(ozone_data[,"ID"]==ID)#
+  y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],m1,m2,yr1,yr2)#
+  correlation=cor.test(linear.detrend(monthly_mean_site), linear.detrend(y))$estimate  #
+  return(correlation)#
+}#
+#==========Main code ==========#
+#------read meteorological data------#
+ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(20,50))#
+met_data=ss$data#
+met_lon=ss$lon-360#
+met_lat=ss$lat#
+met_date=ss$date#
+met_data=cal.season_mean(met_data,met_date,m1,m2,yr1,yr2)#
+#
+#--calculate the correlations in each site--#
+all_sites_correlation=array(NA,52)#
+for(ID in 1:52){#
+  all_sites_correlation[ID]=sites_correlation(ID,met_data,met_lon,met_lat)#
+}#
+#
+dev.new(width=5,height=2.8)#
+plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6),cex=0.7)
+rm(list=ls())#
+library(fields)#
+library(maps);library(ncdf4)#
+#
+#---- load functions ----#
+source("~/Summer_tutor/For_Guangyi/20190802/Guangyi_code/Function.R")#
+#
+#-------parameters-------#
+m1=6;m2=8#
+yr1=1990;yr2=2016#
+#
+#------read ozone data------#
+ozone_data=read.csv("~/Summer_tutor/For_Guangyi/CASTNET_1990-2016.csv",header=TRUE)#
+ozone_data[ozone_data<=-999]=NA#
+o_lon=tapply(ozone_data[,"lon"],ozone_data[,"ID"],mean,na.rm=T)#
+o_lat=tapply(ozone_data[,"lat"],ozone_data[,"ID"],mean,na.rm=T)#
+#
+#----define functions---#
+sites_correlation = function(ID,met_data,met_lon,met_lat){  #
+  ind1=which.min(abs(met_lon-o_lon[ID]))#
+  ind2=which.min(abs(met_lat-o_lat[ID]))    #
+  monthly_mean_site=met_data[ind1,ind2,]  #
+  ind3=(ozone_data[,"ID"]==ID)#
+  y= cal.season_mean(ozone_data[ind3,"mean"], ozone_data[ind3,c("year","month")],m1,m2,yr1,yr2)#
+  correlation=cor.test(linear.detrend(monthly_mean_site), linear.detrend(y))$estimate  #
+  return(correlation)#
+}#
+#==========Main code ==========#
+#------read meteorological data------#
+ss=read_NCEP("air.mon.mean.nc",xlim=c(230,300),ylim=c(20,50))#
+met_data=ss$data#
+met_lon=ss$lon-360#
+met_lat=ss$lat#
+met_date=ss$date#
+met_data=cal.season_mean(met_data,met_date,m1,m2,yr1,yr2)#
+#
+#--calculate the correlations in each site--#
+all_sites_correlation=array(NA,52)#
+for(ID in 1:52){#
+  all_sites_correlation[ID]=sites_correlation(ID,met_data,met_lon,met_lat)#
+}#
+#
+dev.new(width=5,height=2.8)#
+plot.site(all_sites_correlation,cbind(o_lat,o_lon),xlim=c(-130,-60),ylim=c(25,50),type="def",zlim=c(-0.6,0.6),cex=0.7)
