@@ -1,0 +1,1 @@
+Let’s say the correlation pattern in Step 1 is A, find a way to quantify the magnitude of this pattern in each year. For example, the temperature field in 2008 is B, the covariance cov(A,B) should help do the job. But you may have other better ways.

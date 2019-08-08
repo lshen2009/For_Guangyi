@@ -1,0 +1,4 @@
+Learn Neural Networkds
+https://blog.umu618.com/2018/06/05/ann/
+https://www.datacamp.com/community/tutorials/neural-network-models-r
+https://cran.r-project.org/web/packages/neuralnet/neuralnet.pdf
