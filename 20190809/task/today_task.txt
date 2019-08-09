@@ -1,0 +1,2 @@
+(1) Read temperature, dew point temperature, sea level pressure, precipitation and wind in the Data folder.
+(2) 

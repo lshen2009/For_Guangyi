@@ -1,0 +1,1476 @@
+h=0.01#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]#
+#
+for(n in 2:1000) y_implicit[n]= y_implicit[n-1]/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l")#
+lines(y_implicit,col=2)
+h=0.1#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]#
+#
+for(n in 2:1000) y_implicit[n]= y_implicit[n-1]/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l")#
+lines(y_implicit,col=2)
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=0.2#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]#
+#
+for(n in 2:1000) y_implicit[n]= y_implicit[n-1]/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=0.2;a=1.2#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=0.2;#
+a=1.2#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=0.5#
+a=1.2#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=0.1#
+a=1.2#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=1#
+a=1.2#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=2#
+a=1.2#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=1.9#
+a=1.2#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=1.6#
+a=1.2#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=1.6#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=1.2#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=1.4#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=1#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=0.5#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=0.01#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=100#
+y_implicit[1]=100#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+h=0.01#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+#
+for(n in 2:1000)y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(y_explicit,type="l",xlim=c(0,100))#
+lines(y_implicit,col=2)
+x=h*1000
+x
+seq(0,999)
+x=seq(0,999)*h
+x
+h=0.01#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,999)*h#
+for(n in 2:1000){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,100))#
+lines(x,y_implicit,col=2)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,10))#
+lines(x,y_implicit,col=2)
+h=0.1#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,999)*h#
+for(n in 2:1000){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,10))#
+lines(x,y_implicit,col=2)
+h=1#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,999)*h#
+for(n in 2:1000){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,10))#
+lines(x,y_implicit,col=2)
+h=1.2#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,999)*h#
+for(n in 2:1000){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,10))#
+lines(x,y_implicit,col=2)
+h=1.6#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,999)*h#
+for(n in 2:1000){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,10))#
+lines(x,y_implicit,col=2)
+h=1.6#
+a=1.2#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,999)*h#
+for(n in 2:1000){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,10))#
+lines(x,y_implicit,col=2)
+h=1.6#
+a=0#
+y_explicit=array(NA,1000)#
+y_implicit=array(NA,1000)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,999)*h#
+for(n in 2:1000){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:1000) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,10))#
+lines(x,y_implicit,col=2)
+h=1.6#
+a=0#
+N=1000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,10))#
+lines(x,y_implicit,col=2)
+h=1.6#
+a=0#
+N=1000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,100))#
+lines(x,y_implicit,col=2)
+h=1.6#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,30))#
+lines(x,y_implicit,col=2)
+h=0.2#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,30))#
+lines(x,y_implicit,col=2)
+h=0.1#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,30))#
+lines(x,y_implicit,col=2)
+h=0.01#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,30))#
+lines(x,y_implicit,col=2)
+rm(list=ls())#
+h=0.01#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+plot(x,y_explicit,type="l",xlim=c(0,30))#
+lines(x,y_implicit,col=2)
+rm(list=ls())#
+fun=function(h){#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+return(list(x=x, y_explicit= y_explicit, y_implicit= y_implicit))#
+}
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,30))#
+lines(ap$x,ap$y_implicit,col=2)
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(1)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,30))#
+lines(ap$x,ap$y_implicit,col=2)
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(1.2)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,30))#
+lines(ap$x,ap$y_implicit,col=2)
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(1.5)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,30))#
+lines(ap$x,ap$y_implicit,col=2)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(1.5)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,20))#
+lines(ap$x,ap$y_implicit,col=2)
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col=1)#
+lines(ap$x,ap$y_implicit,col=2)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.001)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,20))#
+lines(ap$x,ap$y_implicit,col=2)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,20))#
+lines(ap$x,ap$y_implicit,col=2)
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,20),lwd=2)
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,20),lwd=2,ylim=c(-5,10))#
+#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)#
+#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,10),lwd=2,ylim=c(-5,10))#
+#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)#
+#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.3, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,10),lwd=2,ylim=c(-5,10))#
+#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,10),lwd=2,ylim=c(-5,10),xlab="Time t",ylab="Concentration")
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(ap$x,ap$y_explicit,type="l",xlim=c(0,10),lwd=2,ylim=c(-5,10),xlab="Time t",ylab="Concentration")
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+lines(ap$x,ap$y_implicit,col=4)
+true=fun(0.01)
+true=fun(0.01)#
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=2,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col=2)#
+#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col=4)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=2,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col=2)#
+#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col=4)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=2,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col=2)#
+#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col=2)#
+#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col=2)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=3,ylim=c(-5,10),xlab="Time t",ylab="Concentration")
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col=2)
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col=2)
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col=2)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=3,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col="#fc8d59",lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col="#e34a33",lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col="#b30000",lwd=2)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=4,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col="#fc8d59",lwd=1)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col="#e34a33",lwd=1)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col="#b30000",lwd=1)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col="#fc8d59",lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col="#e34a33",lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col="#b30000",lwd=2)
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n")
+dev.new(width=5,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+ap=fun(0.01)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)
+dev.new(width=7,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.2), mgp=c(1.6, 0.4, 0), tcl=-0.2, ps=13)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)
+dev.new(width=7,height=2.8)#
+par(mai=c(0.6, 0.6, 0.25, 0.1), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)
+dev.new(width=7,height=2.8)#
+par(mai=c(0.6, 0.7, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)
+dev.new(width=7,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+par(mai=c(0.6, 0.7, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+par(mai=c(0.6, 0.6, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)
+dev.new(width=7,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+par(mai=c(0.6, 0.6, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Explict",font.main=1,cex.main=1)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Implicit",font.main=1,cex.main=1)
+dev.new(width=6,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+par(mai=c(0.6, 0.6, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Explict",font.main=1,cex.main=1)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Implicit",font.main=1,cex.main=1)
+dev.new(width=6.5,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+par(mai=c(0.6, 0.6, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Explict",font.main=1,cex.main=1)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("h=0.1","h=0.5","h=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Implicit",font.main=1,cex.main=1)
+rm(list=ls())#
+fun=function(h){#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+return(list(x=x, y_explicit= y_explicit, y_implicit= y_implicit))#
+}#
+#
+true=fun(0.01)#
+#
+dev.new(width=6.5,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+par(mai=c(0.6, 0.6, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("Δt=0.1","Δt=0.5","Δt=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Explict",font.main=1,cex.main=1)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("Δt=0.1","Δt=0.5","Δt=1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Implicit",font.main=1,cex.main=1)
+rm(list=ls())#
+fun=function(h){#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+return(list(x=x, y_explicit= y_explicit, y_implicit= y_implicit))#
+}#
+#
+true=fun(0.01)#
+#
+dev.new(width=6.5,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+par(mai=c(0.6, 0.6, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("Δt = 0.1","Δt = 0.5","Δt = 1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Explict",font.main=1,cex.main=1)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.5)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("Δt = 0.1","Δt = 0.5","Δt = 1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Implicit",font.main=1,cex.main=1)
+rm(list=ls())#
+fun=function(h){#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+return(list(x=x, y_explicit= y_explicit, y_implicit= y_implicit))#
+}#
+#
+true=fun(0.01)#
+#
+dev.new(width=6.5,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+par(mai=c(0.6, 0.6, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.9)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("Δt = 0.1","Δt = 0.5","Δt = 1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Explict",font.main=1,cex.main=1)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.9)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("Δt = 0.1","Δt = 0.5","Δt = 1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Implicit",font.main=1,cex.main=1)
+rm(list=ls())#
+fun=function(h){#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+return(list(x=x, y_explicit= y_explicit, y_implicit= y_implicit))#
+}#
+#
+true=fun(0.01)#
+#
+dev.new(width=6.5,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+par(mai=c(0.6, 0.6, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(1)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("Δt = 0.1","Δt = 0.5","Δt = 1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Explict",font.main=1,cex.main=1)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.9)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("Δt = 0.1","Δt = 0.5","Δt = 1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Implicit",font.main=1,cex.main=1)
+rm(list=ls())#
+fun=function(h){#
+a=0#
+N=5000#
+y_explicit=array(NA,N)#
+y_implicit=array(NA,N)#
+y_explicit[1]=10#
+y_implicit[1]=10#
+x=seq(0,N-1)*h#
+for(n in 2:N){#
+	y_explicit[n]=(1-h)* y_explicit[n-1]+a*h#
+}#
+for(n in 2:N) y_implicit[n]= (y_implicit[n-1]+a*h)/(1+h)#
+return(list(x=x, y_explicit= y_explicit, y_implicit= y_implicit))#
+}#
+#
+true=fun(0.01)#
+#
+dev.new(width=6.5,height=2.8)#
+par(mar=c(3,2,1,3))#
+par(mfrow=c(1,2))#
+par(mai=c(0.6, 0.6, 0.25, 0.05), mgp=c(1.4, 0.4, 0), tcl=-0.2, ps=11)#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#fc8d59","#e34a33","#b30000")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_explicit,col= cols[1],lwd=2)#
+ap=fun(0.9)#
+lines(ap$x,ap$y_explicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_explicit,col= cols[3],lwd=2)#
+legend("topright",c("Δt = 0.1","Δt = 0.9","Δt = 1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Explict",font.main=1,cex.main=1)#
+#
+plot(true$x, true$y_explicit,type="l",xlim=c(0,10),lwd=5,ylim=c(-5,10),xlab="Time t",ylab="Concentration")#
+cols=c("#41b6c4","#2c7fb8","#253494")#
+ap=fun(0.1)#
+lines(ap$x,ap$y_implicit,col= cols[1],lwd=2)#
+ap=fun(0.9)#
+lines(ap$x,ap$y_implicit,col= cols[2],lwd=2)#
+ap=fun(1.5)#
+lines(ap$x,ap$y_implicit,col= cols[3],lwd=2)#
+legend("topright",c("Δt = 0.1","Δt = 0.9","Δt = 1.5"),lty=1,text.col=cols,col=cols,bty="n",lwd=2)#
+title("Implicit",font.main=1,cex.main=1)
+log(2.4e67)/log(2)
+library(ncdf4)
+datadir='/Users/lulushen/Summer_tutor/For_Guangyi/20190729/'
+name="air.mon.mean.nc"
+datafile = nc_open(paste(datadir,name,sep=''))
+lon = ncvar_get(datafile, varid='lon')#
+lat = ncvar_get(datafile, varid='lat')
+datafile
+hours = ncvar_get(datafile, varid='time')
+days=hours/24
+dtm <- as.Date("1800-01-01")
+dtm
+str_time=dtm + days
+str_time
+date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))
+date
+library(ncdf4)#
+#
+read_NCEP=function(name,start_month=6,end_month=8,start_yr=1990,end_yr=2016,pressure=NULL,xlim=c(210,290),ylim=c(10,70)){#
+datadir='/Users/lulushen/Summer_tutor/For_Guangyi/20190729/'#
+#name="air.mon.mean.nc"#
+datafile = nc_open(paste(datadir,name,sep=''))#
+lon = ncvar_get(datafile, varid='lon')#read longitude#
+lat = ncvar_get(datafile, varid='lat')#read latitude#
+hours = ncvar_get(datafile, varid='time')#read hours#
+days=hours/24#convert to days#
+dtm <- as.Date("1800-01-01")##
+str_time=dtm + days#
+date=cbind(as.numeric(format(str_time,"%Y")),as.numeric(format(str_time,"%m")))#
+#
+ind1=which(lon>=xlim[1] & lon<=xlim[2])#
+ind2=which(lat>=ylim[1] & lat<=ylim[2])#
+ind4=which(date[,1]>= start_yr & date[,1]<= end_yr)#
+lon=lon[ind1]#
+lat=lat[ind2]#
+date=date[ind4,]#
+if(!is.null(pressure)) {#
+   lev= ncvar_get(datafile, varid='level')	#
+   ind3=which(lev==pressure)#
+}#
+#
+if(datafile$ndims==3){#
+print("surface")		#
+origin_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind4[1]), count=c(length(ind1),length(ind2),length(ind4)))#
+}#
+if(datafile$ndims==4){#
+print("presure")	#
+origin_data = ncvar_get(datafile,start=c(ind1[1],ind2[1],ind3[1],ind4[1]), count=c(length(ind1),length(ind2),1,length(ind4)))#
+}#
+origin =origin_data[,length(lat):1,]#
+lat=rev(lat)#
+nc_close(datafile)#
+#
+ind=(date[,1]>=start_yr & date[,1]<=end_yr & date[,2]>=start_month & date[,2]<=end_month)#
+output_data=origin[,,ind]#
+#
+output_date=date[ind,]#
+#
+return(list('data'= output_data,'lon'=lon,'lat'=lat,'date'= output_date))#
+}#
+#
+#=============================================#
+ss=read_NCEP("air.mon.mean.nc")
+names(ss)
+data=ss$data
+names(ss)#
+data=ss$data#
+lon=ss$lon#
+lat=ss$lat#
+date=ss$date
+dim(data)
+dim(date)
+date
+image(lon,lat,data)
+3.6+4.4+2.3+3.7+1.7+12.7
+3.6+4.4+2.3+3.7+1.7+12.7-100
+8+9+4+42+36+27+7+3+7+18+5+9+7+2+2+4+2+4+20+1+1
+6.5*7
+rm(list=ls())
+rm(list=ls())#
+setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190809/Data")
+rm(list=ls())#
+setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190809/Data")#
+files=Sys.glob("*.csv")
+met=read.csv(files[1])
+dim(met)
+head(met)
+met=read.csv(files[10])#
+head(met)
+rm(list=ls())#
+setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190809/Data")#
+files=Sys.glob("*.csv")#
+#
+met=read.csv(files[10])#
+spdata=met[,c("DATE","TEMP","DEWP","SLP","WDSP","MAX","PRCP")]
+dim(spdata)
+head(spdata)
+plot(spdata[,"MAX"])
+plot(spdata[,"MAX"],type="l")
+plot((spdata[,"MAX"]-32)/1.8,type="l")
+rm(list=ls())#
+setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190809/Data")#
+files=Sys.glob("*.csv")#
+#
+met=read.csv(files[7])#
+spdata=met[,c("DATE","TEMP","DEWP","SLP","WDSP","MAX","PRCP")]#
+#
+plot((spdata[,"MAX"]-32)/1.8,type="l")
+plot((spdata[,"MAX"]-32)/1.8,type="l")
+rm(list=ls())#
+setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190809/Data")#
+files=Sys.glob("*.csv")#
+#
+result=NULL#
+for(ifile in files){#
+met=read.csv(files[7])#
+data=met[,c("DATE","TEMP","DEWP","SLP","WDSP","MAX","PRCP")]#
+result=rbind(result, data)	#
+}
+dim(result)
+head(result)
+head(met)
+rm(list=ls())#
+setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190809/Data")#
+files=Sys.glob("*.csv")#
+#
+result=NULL#
+for(ifile in files){#
+met=read.csv(files[7])#
+data=met[,c("DATE","TEMP","DEWP","SLP","WDSP","MAX","MIN","PRCP")]#
+result=rbind(result, data)	#
+}
+head(met)
+dim(result)
+head(result)
+as.Date(result[,1])
+date=as.Date(result[,1])
+strdate=as.Date(result[,1])
+date=cbind(as.numeric(format(date,"%Y")),as.numeric(format(date,"%m")),as.numeric(format(date,"%d")))
+date
+dim(result)
+dim(date)
+files
+alldate=seq(as.Date("1999-01-01"),as.Date("2018-12-31"))
+alldate=seq(as.Date("1999-01-01"),as.Date("2018-12-31"),by="day")
+match(strdate,alldate)
+final_data=array(NA,c(length(alldate),dim(result)[2]))
+dim(final_data)
+final_data[time.ind,]=result
+rm(list=ls())#
+setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190809/Data")#
+files=Sys.glob("*.csv")#
+#
+result=NULL#
+for(ifile in files){#
+met=read.csv(files[7])#
+data=met[,c("DATE","TEMP","DEWP","SLP","WDSP","MAX","MIN","PRCP")]#
+result=rbind(result, data)	#
+}#
+strdate=as.Date(result[,1])#
+alldate=seq(as.Date("1999-01-01"),as.Date("2018-12-31"),by="day")#
+time.ind=match(strdate,alldate)
+final_data=array(NA,c(length(alldate),dim(result)[2]))#
+final_data[time.ind,]=result
+final_data[,1]=alldate
+dim(final_data)
+final_data=array(NA,c(length(alldate),dim(result)[2]))
+dim(final_data)
+length(time.ind)
+dim(result)
+final_data[time.ind,]=result
+dim(final_data)
+class(result)
+dim(result)
+final_data=array(NA,c(length(alldate),dim(result)[2]))#
+dim(final_data)
+dim(final_data[time.ind,])
+final_data[time.ind,]=result
+dim(final_data[time.ind,])
+final_data=array(NA,c(length(alldate),dim(result)[2]))#
+dim(final_data)#
+final_data[time.ind,]=data.matrix(result)
+final_data[,1]=alldate
+dim(final_data)
+date=cbind(as.numeric(format(alldate,"%Y")),as.numeric(format(alldate,"%m")),as.numeric(format(alldate,"%d")))
+head(final_data)
+colnames(date)=c("Year","Month","Day")
+alldate
+final=cbind(date,final_data[,2:8])
+head(final)
+rm(list=ls())#
+setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190809/Data")#
+files=Sys.glob("*.csv")#
+#
+result=NULL#
+for(ifile in files){#
+met=read.csv(files[7])#
+data=met[,c("DATE","TEMP","DEWP","SLP","WDSP","MAX","MIN","PRCP")]#
+result=rbind(result, data)	#
+}#
+strdate=as.Date(result[,1])#
+alldate=seq(as.Date("1999-01-01"),as.Date("2018-12-31"),by="day")#
+time.ind=match(strdate,alldate)#
+#
+final_data=array(NA,c(length(alldate),dim(result)[2]))#
+dim(final_data)#
+final_data[time.ind,]=data.matrix(result)#
+final_data[,1]=alldate#
+#
+date=cbind(as.numeric(format(alldate,"%Y")),as.numeric(format(alldate,"%m")),as.numeric(format(alldate,"%d")))#
+colnames(date)=c("Year","Month","Day")#
+final=cbind(date,final_data[,2:8])#
+colnames(final)=c("Year","Month","Day","TEMP","DEWP","SLP","WDSP","MAX","MIN","PRCP")
+head(final)
+files
+plot(final[,"MAX"],type="l")
+rm(list=ls())#
+setwd("/Users/lulushen/Summer_tutor/For_Guangyi/20190809/Data")#
+files=Sys.glob("*.csv")#
+#
+result=NULL#
+for(ifile in files){#
+met=read.csv(ifile)#
+data=met[,c("DATE","TEMP","DEWP","SLP","WDSP","MAX","MIN","PRCP")]#
+result=rbind(result, data)	#
+}#
+strdate=as.Date(result[,1])#
+alldate=seq(as.Date("1999-01-01"),as.Date("2018-12-31"),by="day")#
+time.ind=match(strdate,alldate)#
+#
+final_data=array(NA,c(length(alldate),dim(result)[2]))#
+dim(final_data)#
+final_data[time.ind,]=data.matrix(result)#
+final_data[,1]=alldate#
+#
+date=cbind(as.numeric(format(alldate,"%Y")),as.numeric(format(alldate,"%m")),as.numeric(format(alldate,"%d")))#
+colnames(date)=c("Year","Month","Day")#
+final=cbind(date,final_data[,2:8])#
+colnames(final)=c("Year","Month","Day","TEMP","DEWP","SLP","WDSP","MAX","MIN","PRCP")#
+head(final)#
+#
+plot(final[,"MAX"],type="l")
+final_data[final_data>=999.9]=NA#
+#
+date=cbind(as.numeric(format(alldate,"%Y")),as.numeric(format(alldate,"%m")),as.numeric(format(alldate,"%d")))#
+colnames(date)=c("Year","Month","Day")#
+final=cbind(date,final_data[,2:8])#
+colnames(final)=c("Year","Month","Day","TEMP","DEWP","SLP","WDSP","MAX","MIN","PRCP")#
+head(final)#
+#
+plot(final[,"MAX"],type="l")
+plot(final[,"MIN"],final[,"MAX"])
+plot(final[,"MIN"],final[,"MAX"],type="l")
+plot(final[,"MIN"],final[,"MAX"],type="o")
+plot(final[,"MIN"],final[,"MAX"],type="o",pch=16,cex=0.2)
+plot(final[,"DEWP"],final[,"MAX"],type="o",pch=16,cex=0.2)
+time.ind=(date[,2]>=6 & date[,2]<=8)
+new=final[time.ind,]
+head(new)
+fit<-lm(new[,"MAX"]~new[,"SLP"]+new[,"PREP"]+new[,"WDSP"])
+fit<-lm(new[,"MAX"]~new[,"SLP"]+new[,"PRCP"]+new[,"WDSP"])
+summary(fit)
+fit<-lm(new[,"MAX"]~new[,"SLP"]+new[,"PRCP"]+new[,"WDSP"]+new[,"MIN"])#
+summary(fit)
+y=new[,"MAX"]
+x=y[1:(length(y)-1)]
+x=y[1:(length(y)-1)]#
+y2=y[2:(length(y)-0)]
+plot(x,y2)
+fit(x,y2)
+library(neuralnet)
+time.ind=which(date[,2]>=6 & date[,2]<=8)
+time.ind
+time.ind=which(date[,2]>=6 & date[,2]<=8)#
+y=final[time.ind+1,"MAX"]#
+new=cbind(final[time.ind,],y)
+library(neuralnet)
+dim(new)
+head(new)
+new=na.omit(cbind(final[time.ind,],y))
+head(new)
+dim(new)
+time.ind=which(date[,2]>=6 & date[,2]<=8)#
+y=final[time.ind+1,"MAX"]#
+new=na.omit(cbind(final[time.ind,c("Year","Month","Day","TEMP","DEWP","WDSP","MAX","MIN","PRCP")],y))
+head(new)
+dim(new)
+class(new)
+new=data.frame(new)
+fit<-lm(y~TEMP+DEWP+WDSP+MAX+MIN+PRCP,data=new)
+summary(fit)
+nn=neuralnet(y~TEMP+DEWP+WDSP+PRCP,hidden=3)
+nn=neuralnet(y~TEMP+DEWP+WDSP+PRCP,data=new,hidden=3)
+nn
+plot(nn)
+names(nn)
+nn$response
+plot(new$y,nn$response)
+names(nn)
+plot(new$net.result,nn$y)
+new$net.result
+Predict=compute(nn,new)
+plot(Predict$net.result,nn$y)
+Predict$net.result
+test=data.frame(new[,c("TEMP","DEWP","WDSP","PRCP")])
+head(test)
+Predict=compute(nn,test)
+Predict$net.result
+nn=neuralnet(y~TEMP+DEWP+WDSP+MAX+MIN+PRCP,data=new,hidden=3)#
+plot(nn)#
+names(nn)#
+plot(new$net.result,nn$y)
+test=data.frame(new[,c("TEMP","DEWP","WDSP","MAX","MIN","PRCP")])
+Predict=compute(nn,test)
+Predict=compute(nn,test)
+plot(Predict$net.result,nn$y)
+plot(Predict$response,nn$y)
+Predict$response
+names(Predict)
+names(neuros)
+names(Predict$neuros)
+(Predict$neuros)
+prediction(nn)
+ap=prediction(nn)
+summary(fit)
+ap=prediction(nn)
+ap=prediction(nn)
