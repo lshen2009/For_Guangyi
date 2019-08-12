@@ -1,0 +1,6 @@
+(1) Read the NCEP daily temperature data.
+(2) Calculate the correlation of temperature in the Chengdu site with those in all NCEP gridboxes. Please note that there is one day lag if you decide to predict the temperature of the following day. 
+(3) Plot the correlation pattern in Step 2.
+(4) Characterize the magnitude of the correlation pattern for each day.
+(5) Repeat Step 1-4 for all other variables.
+(6) Now try to improve your neural networks by including these new variables. 
