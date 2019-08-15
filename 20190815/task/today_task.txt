@@ -1,0 +1,7 @@
+We will scrape the data from this website http://aqicn.org/map/.
+AQI is air quality index, which can be converted to concentrations of air pollutants.
+
+(1) Figure out the structure of this website by viewing its source code.
+(2) Scrape the data.
+(3) At some points you may need to learn how to use regular expressions https://stringr.tidyverse.org/articles/regular-expressions.html
+(4) Plot the concentrations
